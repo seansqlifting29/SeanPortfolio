@@ -22,6 +22,11 @@
             --text-secondary: #a0a0a0;
             --text-muted: #6c757d;
             --border: #2a2a2a;
+            /* Muted skill colors */
+            --skill-blue: #1e3a5f;
+            --skill-green: #1e4a3e;
+            --skill-orange: #5a3d1e;
+            --skill-purple: #3d1e4a;
         }
 
         html {
@@ -288,15 +293,13 @@
             transition: transform 0.5s ease;
             gap: 2rem;
             padding: 2rem 0;
-            /* Start centered */
-            justify-content: center;
         }
 
         .carousel-slide {
-            min-width: calc(33.333% - 1.33rem);
-            max-width: 400px;
+            min-width: 60%;
+            max-width: 700px;
             opacity: 0.4;
-            transform: scale(0.85);
+            transform: scale(0.75);
             transition: all 0.5s ease;
             flex-shrink: 0;
         }
@@ -328,6 +331,12 @@
 
         .carousel-slide .video-info {
             padding: 1.5rem 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-slide.active .video-info {
+            opacity: 1;
         }
 
         .carousel-slide h3 {
@@ -690,7 +699,7 @@
             font-size: 1rem;
         }
 
-        /* Skills - Four Boxes */
+        /* Skills - Four Boxes with Muted Colors */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -701,14 +710,29 @@
         .skill-box {
             padding: 1.5rem;
             border-radius: 8px;
-            background: var(--charcoal);
             border: 1px solid var(--border);
             transition: all 0.3s ease;
         }
 
+        .skill-box:nth-child(1) {
+            background: var(--skill-blue);
+        }
+
+        .skill-box:nth-child(2) {
+            background: var(--skill-green);
+        }
+
+        .skill-box:nth-child(3) {
+            background: var(--skill-orange);
+        }
+
+        .skill-box:nth-child(4) {
+            background: var(--skill-purple);
+        }
+
         .skill-box:hover {
-            border-color: var(--accent);
             transform: translateY(-3px);
+            filter: brightness(1.2);
         }
 
         .skill-box h4 {
@@ -720,7 +744,7 @@
             margin: 0;
         }
 
-        /* Meme Style Section */
+        /* Meme Style Section - Now 3 items */
         .meme-section {
             background: var(--charcoal);
         }
@@ -729,7 +753,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
@@ -971,7 +995,7 @@
         /* Responsive */
         @media (max-width: 968px) {
             .carousel-slide {
-                min-width: calc(50% - 1rem);
+                min-width: 80%;
             }
             
             .hero-container {
@@ -1015,6 +1039,10 @@
                 max-width: 500px;
                 margin: 2rem auto 0;
             }
+
+            .meme-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1047,6 +1075,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .meme-grid {
+                grid-template-columns: 1fr;
+            }
+
             .contact-email {
                 font-size: 1.2rem;
             }
@@ -1072,7 +1104,7 @@
                     <a href="https://www.linkedin.com/in/seantyndale/" target="_blank" title="LinkedIn">
                         <img src="icons/LinkedIn.png" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/seansqlifting29" targLet="_blank" title="GitHub">
+                    <a href="https://github.com/seansqlifting29" target="_blank" title="GitHub">
                         <img src="icons/GitHub.png" alt="GitHub">
                     </a>
                     <a href="https://www.instagram.com/sean_da_rager/" target="_blank" title="Instagram">
@@ -1293,7 +1325,7 @@
                 <h3>Editor Profile</h3>
                 <p>With a background in engineering research from Georgia Tech and expertise in automation, I bring an analytical approach to video editing. I don't just cut footage—I optimize content for the algorithm while maintaining authentic storytelling.</p>
                 
-                <!-- Four Skill Sections -->
+                <!-- Four Skill Sections with Muted Colors -->
                 <div class="skills-container">
                     <div class="skill-box">
                         <h4>Video Editing/Production</h4>
@@ -1315,7 +1347,7 @@
         </div>
     </section>
 
-    <!-- Meme Style Section -->
+    <!-- Meme Style Section - Now 3 items -->
     <section class="meme-section">
         <div class="section-header">
             <h2>Editing Style</h2>
@@ -1326,11 +1358,6 @@
                 <div class="meme-icon">⚡</div>
                 <h3>Fast Pacing</h3>
                 <p>Rapid cuts optimized for modern attention spans.</p>
-            </article>
-            <article class="meme-card">
-                <div class="meme-icon">🎯</div>
-                <h3>Precision Timing</h3>
-                <p>Perfect beat-sync for maximum impact.</p>
             </article>
             <article class="meme-card">
                 <div class="meme-icon">🔥</div>
@@ -1473,7 +1500,7 @@
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
             
-            // Calculate offset to center the active slide
+            // Calculate offset to center the active slide with side previews
             const containerWidth = track.parentElement.offsetWidth;
             const slideWidth = slides[0].offsetWidth + 32; // Including gap
             const offset = (containerWidth / 2) - (slideWidth / 2) - (currentSlide * slideWidth);
