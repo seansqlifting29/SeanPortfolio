@@ -397,7 +397,7 @@
             background: var(--accent);
         }
 
-        /* Video Creator Section with Software Logos - White Containment */
+        /* Video Creator Section with Software Logos - Themed Containment */
         .creator-photo-section {
             background: var(--charcoal);
             padding: 5rem 5%;
@@ -435,13 +435,13 @@
             font-size: 1rem;
         }
 
-        /* Software Section - White Containment */
+        /* Software Section - Themed Containment with White Logo Boxes */
         .software-containment {
             margin-top: 2rem;
             padding: 2rem;
-            background: #f5f5f5;
+            background: var(--black);
             border-radius: 12px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border);
         }
 
         .software-title {
@@ -449,7 +449,7 @@
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #666;
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
 
@@ -462,27 +462,28 @@
         .software-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1.25rem 1.5rem;
-            background: white;
+            gap: 1.25rem;
+            padding: 1rem;
+            background: var(--charcoal-light);
             border-radius: 8px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border);
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .software-item:hover {
             border-color: var(--accent);
             transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .software-icon {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: white;
+            border-radius: 8px;
+            padding: 8px;
             flex-shrink: 0;
         }
 
@@ -499,13 +500,13 @@
         .software-info h4 {
             font-size: 1rem;
             font-weight: 600;
-            color: #1a1a1a;
+            color: var(--text-primary);
             margin-bottom: 0.25rem;
         }
 
         .software-info p {
             font-size: 0.85rem;
-            color: #666;
+            color: var(--text-secondary);
             margin: 0;
         }
 
@@ -880,10 +881,10 @@
             color: var(--accent);
         }
 
-        /* CV Download Section */
+        /* CV Download Section - Polished & In Theme */
         .cv-download {
             background: var(--charcoal);
-            padding: 4rem 5%;
+            padding: 6rem 5%;
             text-align: center;
         }
 
@@ -894,12 +895,59 @@
 
         .cv-download h2 {
             border-bottom: none;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .cv-download > p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .cv-card {
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .cv-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .cv-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background: var(--charcoal-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .cv-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--accent);
+        }
+
+        .cv-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
 
-        .cv-download p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+        .cv-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
             margin-bottom: 2rem;
         }
 
@@ -907,7 +955,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 1.2rem 3rem;
+            padding: 1rem 2.5rem;
             background: transparent;
             border: 2px solid var(--accent);
             color: var(--accent);
@@ -1051,6 +1099,14 @@
             .meme-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .cv-download {
+                padding: 4rem 5%;
+            }
+
+            .cv-card {
+                padding: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1094,6 +1150,14 @@
             .software-containment {
                 padding: 1.5rem;
             }
+
+            .cv-download h2 {
+                font-size: 2rem;
+            }
+
+            .cv-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -1120,7 +1184,7 @@
                         <img src="icons/GitHub.png" alt="GitHub">
                     </a>
                     <a href="https://www.instagram.com/sean_da_rager/" target="_blank" title="Instagram">
-                        <img src="icons/Instagram.png" alt="Instagram">
+                        <img src="instagram-icon.png" alt="Instagram">
                     </a>
                 </li>
             </ul>
@@ -1211,7 +1275,7 @@
         </div>
     </section>
 
-    <!-- Video Content Creator Section with Software Logos - White Containment -->
+    <!-- Video Content Creator Section with Software Logos - Themed Containment -->
     <section id="creator" class="creator-photo-section">
         <div class="creator-container">
             <div class="creator-photo">
@@ -1222,13 +1286,13 @@
                 <p>Creating compelling visual narratives that captivate audiences and drive engagement. From concept to final cut, I specialize in crafting content that resonates with viewers and performs across platforms.</p>
                 <p>My approach combines technical precision with creative intuition, ensuring every frame serves the story while maintaining the highest production standards.</p>
                 
-                <!-- Software Section - White Containment -->
+                <!-- Software Section - Themed Containment with White Logo Boxes -->
                 <div class="software-containment">
                     <div class="software-title">Editing Software</div>
                     <div class="software-logos">
                         <div class="software-item">
                             <div class="software-icon">
-                                <img src="icons/CapCut.png" alt="CapCut">
+                                <img src="icons/capcut-logo.png" alt="CapCut">
                             </div>
                             <div class="software-info">
                                 <h4>CapCut</h4>
@@ -1238,7 +1302,7 @@
                         </div>
                         <div class="software-item">
                             <div class="software-icon">
-                                <img src="icons/Adobe.png" alt="Adobe Premiere Pro">
+                                <img src="icons/premiere-logo.png" alt="Adobe Premiere Pro">
                             </div>
                             <div class="software-info">
                                 <h4>Adobe Premiere Pro</h4>
@@ -1461,17 +1525,24 @@
         </div>
     </section>
 
-    <!-- CV Download Section -->
+    <!-- CV Download Section - Polished & In Theme -->
     <section class="cv-download">
         <div class="cv-container">
             <h2>Download CV</h2>
             <p>View my full professional background and qualifications</p>
-            <a href="pdf/Sean_Tyndale_CV.pdf" download class="cv-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download Resume
-            </a>
+            
+            <div class="cv-card">
+                <div class="cv-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3>Resume PDF</h3>
+                <p>Updated January 2025 • 2 pages</p>
+                <a href="pdf/Sean_Tyndale_CV.pdf" download class="cv-btn">
+                    Download
+                </a>
+            </div>
         </div>
     </section>
 
