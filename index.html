@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Professional video editing services by Sean Matthew Tyndale. YouTube content optimization, thumbnail design, and SEO-focused video production.">
-    <meta name="keywords" content="video editing, YouTube editor, thumbnail design, SEO optimization, content creator, video production">
     <title>Sean Matthew Tyndale | Video Editor & Content Creator</title>
     <style>
         * {
@@ -23,15 +21,9 @@
             --text-secondary: #a0a0a0;
             --text-muted: #6c757d;
             --border: #2a2a2a;
-            --skill-blue: #1e3a5f;
-            --skill-green: #1e4a3e;
-            --skill-orange: #5a3d1e;
-            --skill-purple: #3d1e4a;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -39,7 +31,6 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            touch-action: pan-y;
         }
 
         /* Navigation */
@@ -102,9 +93,7 @@
             transition: color 0.3s ease;
         }
 
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
+        .nav-links a:hover { color: var(--text-primary); }
 
         .social-nav {
             display: flex;
@@ -124,9 +113,7 @@
             transition: opacity 0.3s ease;
         }
 
-        .social-nav a:hover {
-            opacity: 1;
-        }
+        .social-nav a:hover { opacity: 1; }
 
         .social-nav img {
             width: 100%;
@@ -143,18 +130,6 @@
             padding: 8rem 5% 5rem;
             background: var(--charcoal);
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(44, 90, 160, 0.1) 0%, transparent 50%);
-            pointer-events: none;
         }
 
         .hero-container {
@@ -164,8 +139,6 @@
             grid-template-columns: 1fr 1.2fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-content h1 {
@@ -173,7 +146,6 @@
             font-weight: 800;
             line-height: 1;
             margin-bottom: 1.5rem;
-            color: var(--text-primary);
             text-transform: uppercase;
             letter-spacing: -2px;
         }
@@ -193,14 +165,9 @@
             margin-bottom: 2.5rem;
             max-width: 500px;
             line-height: 1.8;
-            font-weight: 400;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+        .cta-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
         .btn {
             padding: 1rem 2.5rem;
@@ -215,7 +182,6 @@
             color: white;
             cursor: pointer;
             border-radius: 4px;
-            touch-action: manipulation;
         }
 
         .btn:hover {
@@ -232,11 +198,9 @@
         .btn-outline:hover {
             border-color: var(--accent);
             color: var(--accent);
-            background: transparent;
         }
 
         .hero-image {
-            position: relative;
             display: flex;
             justify-content: center;
         }
@@ -247,17 +211,13 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-            filter: contrast(1.05);
         }
 
         /* Section Styles */
-        section {
-            padding: 4rem 5%;
-            position: relative;
-        }
+        section { padding: 4rem 5%; }
 
         .section-header {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             border-bottom: 2px solid var(--accent);
             padding-bottom: 0.75rem;
         }
@@ -267,7 +227,6 @@
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: var(--text-primary);
         }
 
         .section-subtitle {
@@ -278,11 +237,8 @@
             letter-spacing: 1px;
         }
 
-        /* Video Carousel Section */
-        .portfolio {
-            background: var(--black);
-            padding: 4rem 5%;
-        }
+        /* Video Carousel */
+        .portfolio { background: var(--black); }
 
         .carousel-container {
             max-width: 1200px;
@@ -333,20 +289,17 @@
         }
 
         .carousel-slide .video-info {
-            padding: 1.25rem 0 0;
+            padding: 1rem 0 0;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
-        .carousel-slide.active .video-info {
-            opacity: 1;
-        }
+        .carousel-slide.active .video-info { opacity: 1; }
 
         .carousel-slide h3 {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
-            color: var(--text-primary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -373,17 +326,12 @@
             width: 44px;
             height: 70px;
             cursor: pointer;
-            font-size: 1.5rem;
             transition: all 0.3s ease;
             border-radius: 8px;
-            touch-action: manipulation;
-            -webkit-touch-callout: none;
-            user-select: none;
             z-index: 10;
             display: none;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(4px);
         }
 
         .carousel-arrow:hover {
@@ -394,15 +342,6 @@
 
         .carousel-arrow.prev { left: 0.5rem; }
         .carousel-arrow.next { right: 0.5rem; }
-
-        .carousel-arrow svg {
-            width: 24px;
-            height: 24px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .carousel-arrow:hover svg { opacity: 1; }
 
         .carousel-controls {
             display: flex;
@@ -421,9 +360,6 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
             border-radius: 4px;
-            touch-action: manipulation;
-            -webkit-touch-callout: none;
-            user-select: none;
         }
 
         .carousel-btn:hover {
@@ -435,7 +371,7 @@
             display: flex;
             justify-content: center;
             gap: 0.5rem;
-            margin-top: 1.25rem;
+            margin-top: 1rem;
         }
 
         .dot {
@@ -445,7 +381,6 @@
             background: var(--border);
             cursor: pointer;
             transition: all 0.3s ease;
-            touch-action: manipulation;
         }
 
         .dot.active {
@@ -455,10 +390,7 @@
         }
 
         /* Creator Section */
-        .creator-photo-section {
-            background: var(--charcoal);
-            padding: 4rem 5%;
-        }
+        .creator-photo-section { background: var(--charcoal); }
 
         .creator-container {
             max-width: 1200px;
@@ -479,8 +411,7 @@
         .creator-content h3 {
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--text-primary);
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -488,7 +419,7 @@
         .creator-content p {
             color: var(--text-secondary);
             line-height: 1.7;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             font-size: 0.95rem;
         }
 
@@ -554,7 +485,6 @@
         .software-info h4 {
             font-size: 0.95rem;
             font-weight: 600;
-            color: var(--text-primary);
             margin-bottom: 0.125rem;
         }
 
@@ -572,24 +502,19 @@
             letter-spacing: 1px;
         }
 
-        /* Thumbnails Section - Desktop Grid / Mobile Carousel */
-        .thumbnails {
-            background: var(--black);
-            padding: 4rem 5%;
-        }
+        /* Thumbnails Section */
+        .thumbnails { background: var(--black); }
 
         .thumbnails-header {
             max-width: 900px;
             margin: 0 auto 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
         }
 
         .thumbnails-tabs {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
+            margin-top: 1rem;
         }
 
         .tab-btn {
@@ -604,7 +529,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border-radius: 4px;
-            touch-action: manipulation;
         }
 
         .tab-btn:hover, .tab-btn.active {
@@ -636,7 +560,6 @@
         .thumbnail-card:hover {
             transform: translateY(-4px);
             border-color: var(--accent);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
         }
 
         .thumbnail-card img {
@@ -649,31 +572,29 @@
 
         .thumbnail-card:hover img { opacity: 0.4; }
 
-        /* Desktop: Non-clickable dark transparent button that disappears on hover */
+        /* Desktop: Blue button that disappears on hover */
         .view-btn {
             position: absolute;
             bottom: 1rem;
             left: 50%;
             transform: translateX(-50%);
             padding: 0.6rem 1.25rem;
-            background: rgba(0, 0, 0, 0.7);
-            color: var(--text-secondary);
+            background: var(--accent);
+            color: white;
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border: 1px solid var(--border);
+            border: none;
             border-radius: 4px;
             pointer-events: none;
             z-index: 5;
             opacity: 1;
             white-space: nowrap;
-            transition: all 0.3s ease;
+            transition: opacity 0.3s ease;
         }
 
-        .thumbnail-card:hover .view-btn {
-            opacity: 0;
-        }
+        .thumbnail-card:hover .view-btn { opacity: 0; }
 
         .thumbnail-overlay {
             position: absolute;
@@ -748,37 +669,28 @@
             letter-spacing: 0.5px;
         }
 
-        /* Mobile Carousel Styles */
+        /* Mobile Thumbnail Carousel */
         .thumbnail-carousel-wrapper {
             display: none;
-            position: relative;
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
+            position: relative;
         }
 
         .thumbnail-carousel-container {
             overflow: hidden;
-            position: relative;
+            border-radius: 10px;
         }
 
         .thumbnail-carousel-track {
             display: flex;
             transition: transform 0.4s ease;
-            gap: 1rem;
-            padding: 0.5rem 0;
         }
 
         .thumbnail-carousel-slide {
-            min-width: 85%;
+            min-width: 100%;
             flex-shrink: 0;
-            opacity: 0.4;
-            transform: scale(0.9);
-            transition: all 0.4s ease;
-        }
-
-        .thumbnail-carousel-slide.active {
-            opacity: 1;
-            transform: scale(1);
+            padding: 0 0.5rem;
         }
 
         .thumbnail-carousel-slide .thumbnail-card {
@@ -807,82 +719,51 @@
             border-radius: 4px;
         }
 
-        /* Pricing Section - Tier Based Desktop */
-        .pricing {
-            background: var(--charcoal);
-            padding: 3rem 5%;
-        }
+        /* Pricing Section - Clean Desktop */
+        .pricing { background: var(--charcoal); }
 
         .pricing-grid {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            align-items: stretch;
-        }
-
-        /* Tier 1 - Basic */
-        .pricing-card:nth-child(1) {
-            background: var(--black);
-            border: 1px solid var(--border);
-            border-radius: 12px 0 0 12px;
-            position: relative;
-            z-index: 1;
-            transform: scale(0.95);
-            opacity: 0.9;
-        }
-
-        /* Tier 2 - Featured/Premium (Middle) */
-        .pricing-card:nth-child(2) {
-            background: var(--black);
-            border: 2px solid var(--accent);
-            border-radius: 12px;
-            position: relative;
-            z-index: 3;
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(44, 90, 160, 0.15);
-        }
-
-        .pricing-card:nth-child(2)::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: white;
-            padding: 0.4rem 1rem;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            border-radius: 20px;
-        }
-
-        /* Tier 3 - Ultimate */
-        .pricing-card:nth-child(3) {
-            background: var(--black);
-            border: 1px solid var(--border);
-            border-radius: 0 12px 12px 0;
-            position: relative;
-            z-index: 2;
-            transform: scale(0.98);
+            gap: 1.5rem;
+            align-items: start;
         }
 
         .pricing-card {
-            padding: 2rem 1.5rem;
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.75rem;
             transition: all 0.3s ease;
         }
 
         .pricing-card:hover {
             border-color: var(--accent);
-            transform: scale(1.02);
-            z-index: 4;
+            transform: translateY(-5px);
         }
 
-        .pricing-card:nth-child(1):hover { transform: scale(0.98); }
-        .pricing-card:nth-child(2):hover { transform: scale(1.08); }
-        .pricing-card:nth-child(3):hover { transform: scale(1); }
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            position: relative;
+            transform: scale(1.02);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
 
         .tier-label {
             font-size: 0.7rem;
@@ -890,14 +771,13 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .price {
-            font-size: 2.25rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 0.25rem;
-            color: var(--text-primary);
         }
 
         .price span {
@@ -908,11 +788,11 @@
 
         .pricing-card ul {
             list-style: none;
-            margin: 1.5rem 0;
+            margin: 1.25rem 0;
         }
 
         .pricing-card li {
-            padding: 0.6rem 0;
+            padding: 0.5rem 0;
             color: var(--text-secondary);
             font-size: 0.85rem;
             position: relative;
@@ -932,18 +812,6 @@
             font-size: 0.8rem;
         }
 
-        /* Feature indicators for tier differentiation */
-        .feature-count {
-            display: inline-block;
-            margin-top: 0.5rem;
-            padding: 0.25rem 0.75rem;
-            background: rgba(44, 90, 160, 0.1);
-            border-radius: 12px;
-            font-size: 0.7rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-
         .best-for {
             margin-top: 1rem;
             padding-top: 1rem;
@@ -951,121 +819,44 @@
             font-size: 0.8rem;
             color: var(--text-muted);
             font-style: italic;
-            line-height: 1.4;
         }
 
-        /* Mobile Pricing Carousel */
-        .pricing-carousel-wrapper {
+        /* Mobile Pricing - Clean Simple Cards */
+        .pricing-mobile {
             display: none;
-            position: relative;
-            max-width: 340px;
+            max-width: 400px;
             margin: 0 auto;
         }
 
-        .pricing-carousel-container {
-            overflow: hidden;
-            background: var(--charcoal);
-            border-radius: 16px;
+        .pricing-card-mobile {
+            background: var(--black);
             border: 1px solid var(--border);
-        }
-
-        .pricing-carousel-track {
-            display: flex;
-            transition: transform 0.4s ease;
-        }
-
-        .pricing-carousel-slide {
-            min-width: 100%;
-            flex-shrink: 0;
+            border-radius: 8px;
             padding: 1.5rem;
-            opacity: 0.5;
-            transform: scale(0.9);
-            transition: all 0.4s ease;
-        }
-
-        .pricing-carousel-slide.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .pricing-carousel-slide .pricing-card {
-            border: none;
-            background: transparent;
-            padding: 0;
-            transform: none;
-            opacity: 1;
-        }
-
-        .pricing-carousel-slide.active .pricing-card:nth-child(2)::before {
-            display: none;
-        }
-
-        .mobile-tier-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 1px;
             margin-bottom: 1rem;
-            text-transform: uppercase;
         }
 
-        .mobile-tier-badge.free {
-            background: var(--border);
-            color: var(--text-secondary);
-        }
-
-        .mobile-tier-badge.premium {
-            background: var(--accent);
-            color: white;
-        }
-
-        .mobile-tier-badge.ultimate {
-            background: linear-gradient(135deg, var(--accent), #1e3a5f);
-            color: white;
-        }
-
-        .pricing-carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .pricing-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--border);
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .pricing-card-mobile.featured {
+            border: 2px solid var(--accent);
             position: relative;
         }
 
-        .pricing-dot.active {
-            background: var(--accent);
-            transform: scale(1.2);
-        }
-
-        .pricing-dot::after {
-            content: '';
+        .pricing-card-mobile.featured::before {
+            content: 'MOST POPULAR';
             position: absolute;
-            inset: -4px;
-            border: 2px solid transparent;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-dot.active::after {
-            border-color: var(--accent);
+            top: -8px;
+            left: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 4px;
         }
 
         /* About Section */
-        .about {
-            background: var(--black);
-            padding: 4rem 5%;
-        }
+        .about { background: var(--black); }
 
         .about-container {
             max-width: 1200px;
@@ -1086,15 +877,14 @@
         .about-content h3 {
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--text-primary);
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .about-content > p {
             color: var(--text-secondary);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             line-height: 1.7;
             font-size: 0.95rem;
         }
@@ -1113,30 +903,23 @@
             transition: all 0.3s ease;
         }
 
-        .skill-box:nth-child(1) { background: var(--skill-blue); }
-        .skill-box:nth-child(2) { background: var(--skill-green); }
-        .skill-box:nth-child(3) { background: var(--skill-orange); }
-        .skill-box:nth-child(4) { background: var(--skill-purple); }
+        .skill-box:nth-child(1) { background: #1e3a5f; }
+        .skill-box:nth-child(2) { background: #1e4a3e; }
+        .skill-box:nth-child(3) { background: #5a3d1e; }
+        .skill-box:nth-child(4) { background: #3d1e4a; }
 
-        .skill-box:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.2);
-        }
+        .skill-box:hover { transform: translateY(-3px); }
 
         .skill-box h4 {
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--text-primary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin: 0;
         }
 
-        /* Meme Style Section */
-        .meme-section {
-            background: var(--charcoal);
-            padding: 4rem 5%;
-        }
+        /* Meme Section */
+        .meme-section { background: var(--charcoal); }
 
         .meme-grid {
             max-width: 1000px;
@@ -1158,7 +941,6 @@
         .meme-card:hover {
             border-color: var(--accent);
             transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
         }
 
         .meme-icon {
@@ -1180,11 +962,8 @@
             line-height: 1.5;
         }
 
-        /* Inquiry Form Section */
-        .inquiry {
-            background: var(--black);
-            padding: 4rem 5%;
-        }
+        /* Inquiry Form */
+        .inquiry { background: var(--black); }
 
         .form-container {
             max-width: 650px;
@@ -1252,8 +1031,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border-radius: 4px;
-            margin-top: 0.25rem;
-            touch-action: manipulation;
         }
 
         .submit-btn:hover {
@@ -1261,11 +1038,8 @@
             color: var(--accent);
         }
 
-        /* CV Download Section */
-        .cv-download {
-            background: var(--charcoal);
-            padding: 3rem 5%;
-        }
+        /* CV Download */
+        .cv-download { background: var(--charcoal); }
 
         .cv-container {
             max-width: 750px;
@@ -1277,7 +1051,6 @@
         }
 
         .cv-content h2 {
-            border-bottom: none;
             margin-bottom: 0.5rem;
             font-size: 1.6rem;
         }
@@ -1318,29 +1091,12 @@
             padding: 1.75rem;
             transition: all 0.3s ease;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cv-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
         }
 
         .cv-card:hover {
             border-color: var(--accent);
             transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
         }
-
-        .cv-card:hover::before { transform: scaleX(1); }
 
         .cv-icon {
             width: 48px;
@@ -1365,7 +1121,6 @@
             font-weight: 600;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: var(--text-primary);
             margin-bottom: 0.2rem;
         }
 
@@ -1390,7 +1145,6 @@
             text-transform: uppercase;
             transition: all 0.3s ease;
             border-radius: 6px;
-            touch-action: manipulation;
         }
 
         .cv-btn:hover {
@@ -1398,12 +1152,7 @@
             color: var(--accent);
         }
 
-        .cv-btn svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        /* Contact Section */
+        /* Contact */
         .contact {
             background: var(--black);
             text-align: center;
@@ -1425,11 +1174,6 @@
             margin-bottom: 0.875rem;
         }
 
-        .contact-email-wrapper {
-            display: inline-block;
-            position: relative;
-        }
-
         .contact-email {
             font-size: 1.1rem;
             color: var(--text-primary);
@@ -1443,29 +1187,13 @@
             background: var(--charcoal);
             border: 1px solid var(--border);
             border-radius: 8px;
-            position: relative;
-        }
-
-        .contact-email::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
         }
 
         .contact-email:hover {
             color: var(--accent);
             border-color: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
-
-        .contact-email:hover::before { transform: scaleX(1); }
 
         .contact-email svg {
             width: 18px;
@@ -1491,7 +1219,6 @@
             border: 1px solid var(--border);
             border-radius: 50%;
             padding: 8px;
-            touch-action: manipulation;
         }
 
         .social-links a:hover {
@@ -1533,11 +1260,6 @@
                 height: 60px;
             }
 
-            .carousel-arrow.prev { left: 0.5rem; }
-            .carousel-arrow.next { right: 0.5rem; }
-
-            .carousel-container { padding: 0 3rem; }
-
             .carousel-controls { display: none; }
 
             .hero-container {
@@ -1545,8 +1267,6 @@
                 text-align: center;
                 gap: 3rem;
             }
-
-            .hero-content h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
 
             .hero-image img { max-width: 350px; }
 
@@ -1581,8 +1301,6 @@
 
             .meme-card { padding: 1.25rem; }
 
-            .cv-download { padding: 3rem 5%; }
-
             .cv-container {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -1590,15 +1308,6 @@
             }
 
             .cv-benefits { align-items: center; }
-
-            .section-header { margin-bottom: 2rem; }
-
-            /* Desktop pricing adjustments for tablet */
-            .pricing-grid { gap: 0.5rem; }
-
-            .pricing-card { padding: 1.5rem 1rem; }
-
-            .price { font-size: 1.75rem; }
         }
 
         @media (max-width: 768px) {
@@ -1613,17 +1322,10 @@
 
             .carousel-slide { min-width: 85%; }
 
-            .carousel-container { padding: 0 2.5rem; }
-
             .carousel-arrow {
                 width: 36px;
                 height: 50px;
             }
-
-            .carousel-arrow.prev { left: 0; }
-            .carousel-arrow.next { right: 0; }
-
-            .carousel-dots { margin-top: 1rem; }
 
             .form-grid {
                 grid-template-columns: 1fr;
@@ -1632,20 +1334,12 @@
 
             .form-container { padding: 1.5rem; }
 
-            /* Thumbnails: Switch to carousel on mobile */
+            /* Thumbnails: Show carousel, hide grid */
             .thumbnail-grid { display: none; }
 
             .thumbnail-carousel-wrapper { display: block; }
 
-            .thumbnails-tabs {
-                justify-content: center;
-                margin-bottom: 1rem;
-            }
-
-            .tab-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.7rem;
-            }
+            .thumbnails-tabs { justify-content: center; }
 
             .skills-container {
                 grid-template-columns: 1fr;
@@ -1663,18 +1357,10 @@
                 padding: 0.75rem 1.25rem;
             }
 
-            .software-containment { padding: 1.25rem; }
-
-            .cv-content h2 { font-size: 1.4rem; }
-
-            .cv-card { padding: 1.5rem; }
-
-            /* Pricing: Switch to carousel on mobile */
+            /* Pricing: Show mobile cards, hide desktop grid */
             .pricing-grid { display: none; }
 
-            .pricing-carousel-wrapper { display: block; }
-
-            .section-header { margin-bottom: 1.5rem; }
+            .pricing-mobile { display: block; }
 
             h2 { font-size: 1.4rem; }
 
@@ -1682,19 +1368,13 @@
         }
 
         @media (max-width: 480px) {
-            .pricing-carousel-slide { padding: 1.25rem; }
+            .pricing-card-mobile { padding: 1.25rem; }
 
-            .price { font-size: 1.5rem; }
-
-            .tier-label { font-size: 0.65rem; }
-
-            .pricing-card li { font-size: 0.75rem; }
+            .price { font-size: 1.75rem; }
 
             .meme-grid { gap: 0.75rem; }
 
             .meme-card { padding: 1rem; }
-
-            .thumbnail-carousel-slide { min-width: 90%; }
         }
     </style>
 </head>
@@ -1757,7 +1437,7 @@
         
         <div class="carousel-wrapper">
             <button class="carousel-arrow prev" onclick="moveCarousel(-1)" aria-label="Previous slide">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
@@ -1816,8 +1496,8 @@
                 </div>
 
                 <div class="carousel-controls">
-                    <button class="carousel-btn" id="prevBtn" onclick="moveCarousel(-1)">←</button>
-                    <button class="carousel-btn" id="nextBtn" onclick="moveCarousel(1)">→</button>
+                    <button class="carousel-btn" onclick="moveCarousel(-1)">←</button>
+                    <button class="carousel-btn" onclick="moveCarousel(1)">→</button>
                 </div>
                 
                 <div class="carousel-dots">
@@ -1830,7 +1510,7 @@
             </div>
             
             <button class="carousel-arrow next" onclick="moveCarousel(1)" aria-label="Next slide">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
             </button>
@@ -1876,7 +1556,7 @@
         </div>
     </section>
 
-    <!-- Thumbnails Section - Desktop Grid / Mobile Carousel -->
+    <!-- Thumbnails Section -->
     <section id="thumbnails" class="thumbnails">
         <div class="thumbnails-header">
             <div class="section-header" style="margin-bottom: 0;">
@@ -1974,7 +1654,7 @@
         <div class="thumbnail-carousel-wrapper">
             <div class="thumbnail-carousel-container">
                 <div class="thumbnail-carousel-track" id="thumbnailCarouselTrack">
-                    <div class="thumbnail-carousel-slide active">
+                    <div class="thumbnail-carousel-slide">
                         <div class="thumbnail-card" data-category="viral">
                             <img src="images/thumbnail1.jpg" alt="Travel Series Thumbnail">
                             <div class="thumbnail-overlay">
@@ -2064,19 +1744,18 @@
         </div>
     </section>
 
-    <!-- Pricing Section - Tier Based Desktop / Carousel Mobile -->
+    <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="section-header">
             <h2>Video Production Packages</h2>
             <p class="section-subtitle">Flexible Plans for Every Creator</p>
         </div>
 
-        <!-- Desktop Tier Layout -->
+        <!-- Desktop Grid -->
         <div class="pricing-grid">
             <article class="pricing-card">
                 <div class="tier-label">Tier 1 — Starter</div>
                 <div class="price">$500 <span>per video</span></div>
-                <span class="feature-count">5 Features</span>
                 <ul>
                     <li>Up to 15-minute finished video</li>
                     <li>Full editing and visual refinement</li>
@@ -2090,7 +1769,6 @@
             <article class="pricing-card featured">
                 <div class="tier-label">Tier 2 — Professional</div>
                 <div class="price">$1,800 <span>per month</span></div>
-                <span class="feature-count">8 Features</span>
                 <ul>
                     <li>Up to 45 hours production time</li>
                     <li>3-4 videos per month</li>
@@ -2107,7 +1785,6 @@
             <article class="pricing-card">
                 <div class="tier-label">Tier 3 — Enterprise</div>
                 <div class="price">$3,000 <span>per month</span></div>
-                <span class="feature-count">10 Features</span>
                 <ul>
                     <li>Up to 80 hours production time</li>
                     <li>6-8 videos per month</li>
@@ -2124,63 +1801,45 @@
             </article>
         </div>
 
-        <!-- Mobile Carousel -->
-        <div class="pricing-carousel-wrapper">
-            <div class="pricing-carousel-container">
-                <div class="pricing-carousel-track" id="pricingCarouselTrack">
-                    <div class="pricing-carousel-slide">
-                        <span class="mobile-tier-badge free">Starter</span>
-                        <div class="pricing-card">
-                            <div class="tier-label">Tier 1 — Project-Based</div>
-                            <div class="price">$500 <span>per video</span></div>
-                            <ul>
-                                <li>Up to 15-minute finished video</li>
-                                <li>Full editing and visual refinement</li>
-                                <li>Up to 12 hours production time</li>
-                                <li>2 revision rounds</li>
-                                <li>SEO optimization included</li>
-                            </ul>
-                            <div class="best-for">Best for one-off or trial projects.</div>
-                        </div>
-                    </div>
-
-                    <div class="pricing-carousel-slide active">
-                        <span class="mobile-tier-badge premium">Most Popular</span>
-                        <div class="pricing-card featured">
-                            <div class="tier-label">Tier 2 — Monthly Retainer</div>
-                            <div class="price">$1,800 <span>per month</span></div>
-                            <ul>
-                                <li>Up to 45 hours production time</li>
-                                <li>3-4 videos per month</li>
-                                <li>Priority scheduling</li>
-                                <li>Thumbnail design included</li>
-                                <li>Monthly analytics report</li>
-                            </ul>
-                            <div class="best-for">Best for consistent content production.</div>
-                        </div>
-                    </div>
-
-                    <div class="pricing-carousel-slide">
-                        <span class="mobile-tier-badge ultimate">Ultimate</span>
-                        <div class="pricing-card">
-                            <div class="tier-label">Tier 3 — Premium Partner</div>
-                            <div class="price">$3,000 <span>per month</span></div>
-                            <ul>
-                                <li>Up to 80 hours production time</li>
-                                <li>6-8 videos per month</li>
-                                <li>Unlimited minor revisions</li>
-                                <li>Advanced SEO strategy</li>
-                                <li>Custom thumbnail package</li>
-                            </ul>
-                            <div class="best-for">Best for high-volume partnerships.</div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Mobile Simple Cards -->
+        <div class="pricing-mobile">
+            <div class="pricing-card-mobile">
+                <div class="tier-label">Tier 1 — Starter</div>
+                <div class="price">$500 <span>per video</span></div>
+                <ul>
+                    <li>Up to 15-minute finished video</li>
+                    <li>Full editing and visual refinement</li>
+                    <li>Up to 12 hours production time</li>
+                    <li>2 revision rounds</li>
+                    <li>SEO optimization included</li>
+                </ul>
+                <div class="best-for">Best for one-off or trial projects.</div>
             </div>
-            <div class="pricing-carousel-dots">
-                <span class="pricing-dot" onclick="goToPricingSlide(0)"></span>
-                <span class="pricing-dot active" onclick="goToPricingSlide(1)"></span>
-                <span class="pricing-dot" onclick="goToPricingSlide(2)"></span>
+
+            <div class="pricing-card-mobile featured">
+                <div class="tier-label">Tier 2 — Professional</div>
+                <div class="price">$1,800 <span>per month</span></div>
+                <ul>
+                    <li>Up to 45 hours production time</li>
+                    <li>3-4 videos per month</li>
+                    <li>Priority scheduling</li>
+                    <li>Thumbnail design included</li>
+                    <li>Monthly analytics report</li>
+                </ul>
+                <div class="best-for">Best for consistent content production.</div>
+            </div>
+
+            <div class="pricing-card-mobile">
+                <div class="tier-label">Tier 3 — Enterprise</div>
+                <div class="price">$3,000 <span>per month</span></div>
+                <ul>
+                    <li>Up to 80 hours production time</li>
+                    <li>6-8 videos per month</li>
+                    <li>Unlimited minor revisions</li>
+                    <li>Advanced SEO strategy</li>
+                    <li>Custom thumbnail package</li>
+                </ul>
+                <div class="best-for">Best for high-volume partnerships.</div>
             </div>
         </div>
     </section>
@@ -2366,14 +2025,12 @@
     <section id="contact" class="contact">
         <div class="contact-content">
             <p class="contact-label">Let's Work Together</p>
-            <div class="contact-email-wrapper">
-                <a href="mailto:styndale3gatech@gmail.com" class="contact-email">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    styndale3gatech@gmail.com
-                </a>
-            </div>
+            <a href="mailto:styndale3gatech@gmail.com" class="contact-email">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                styndale3gatech@gmail.com
+            </a>
             
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/seantyndale/" target="_blank" title="LinkedIn">
@@ -2400,7 +2057,6 @@
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
         const track = document.getElementById('carouselTrack');
-        const totalSlides = slides.length;
 
         function updateCarousel() {
             slides.forEach((slide, index) => {
@@ -2420,75 +2076,38 @@
 
         function moveCarousel(direction) {
             currentSlide += direction;
-            
-            if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
-            } else if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            }
-            
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            else if (currentSlide >= slides.length) currentSlide = 0;
             updateCarousel();
         }
 
         function goToSlide(index) {
-            if (index >= 0 && index < totalSlides) {
-                currentSlide = index;
-                updateCarousel();
-            }
+            currentSlide = index;
+            updateCarousel();
         }
 
         // Thumbnail Carousel (Mobile)
-        let currentThumbnailSlide = 0;
-        const thumbnailSlides = document.querySelectorAll('.thumbnail-carousel-slide');
-        const thumbnailDots = document.querySelectorAll('.thumbnail-dot');
-        const thumbnailTrack = document.getElementById('thumbnailCarouselTrack');
-        const totalThumbnailSlides = thumbnailSlides.length;
+        let currentThumbSlide = 0;
+        const thumbSlides = document.querySelectorAll('.thumbnail-carousel-slide');
+        const thumbDots = document.querySelectorAll('.thumbnail-dot');
+        const thumbTrack = document.getElementById('thumbnailCarouselTrack');
 
         function updateThumbnailCarousel() {
-            thumbnailSlides.forEach((slide, index) => {
+            thumbSlides.forEach((slide, index) => {
                 slide.classList.remove('active');
-                thumbnailDots[index].classList.remove('active');
+                thumbDots[index].classList.remove('active');
             });
             
-            thumbnailSlides[currentThumbnailSlide].classList.add('active');
-            thumbnailDots[currentThumbnailSlide].classList.add('active');
+            thumbSlides[currentThumbSlide].classList.add('active');
+            thumbDots[currentThumbSlide].classList.add('active');
             
-            const offset = -(currentThumbnailSlide * (thumbnailSlides[0].offsetWidth + 16));
-            thumbnailTrack.style.transform = `translateX(${offset}px)`;
+            const offset = -(currentThumbSlide * 100);
+            thumbTrack.style.transform = `translateX(${offset}%)`;
         }
 
         function goToThumbnailSlide(index) {
-            if (index >= 0 && index < totalThumbnailSlides) {
-                currentThumbnailSlide = index;
-                updateThumbnailCarousel();
-            }
-        }
-
-        // Pricing Carousel (Mobile)
-        let currentPricingSlide = 1; // Start with middle (Premium) active
-        const pricingSlides = document.querySelectorAll('.pricing-carousel-slide');
-        const pricingDots = document.querySelectorAll('.pricing-dot');
-        const pricingTrack = document.getElementById('pricingCarouselTrack');
-        const totalPricingSlides = pricingSlides.length;
-
-        function updatePricingCarousel() {
-            pricingSlides.forEach((slide, index) => {
-                slide.classList.remove('active');
-                pricingDots[index].classList.remove('active');
-            });
-            
-            pricingSlides[currentPricingSlide].classList.add('active');
-            pricingDots[currentPricingSlide].classList.add('active');
-            
-            const offset = -(currentPricingSlide * 100);
-            pricingTrack.style.transform = `translateX(${offset}%)`;
-        }
-
-        function goToPricingSlide(index) {
-            if (index >= 0 && index < totalPricingSlides) {
-                currentPricingSlide = index;
-                updatePricingCarousel();
-            }
+            currentThumbSlide = index;
+            updateThumbnailCarousel();
         }
 
         // Thumbnail Filter (Desktop)
@@ -2519,71 +2138,33 @@
             setTimeout(() => {
                 updateCarousel();
                 updateThumbnailCarousel();
-                updatePricingCarousel();
             }, 100);
         });
         
-        window.addEventListener('resize', () => {
-            updateCarousel();
-            updateThumbnailCarousel();
-        });
+        window.addEventListener('resize', updateCarousel);
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Prevent double-tap zoom
-        document.addEventListener('dblclick', function(event) {
-            event.preventDefault();
-        }, { passive: false });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') moveCarousel(-1);
-            if (e.key === 'ArrowRight') moveCarousel(1);
-        });
-
-        // Touch swipe for mobile carousels
+        // Touch swipe for thumbnail carousel
         let touchStartX = 0;
-        let touchEndX = 0;
-
-        const thumbnailCarousel = document.querySelector('.thumbnail-carousel-container');
-        if (thumbnailCarousel) {
-            thumbnailCarousel.addEventListener('touchstart', e => {
+        const thumbContainer = document.querySelector('.thumbnail-carousel-container');
+        if (thumbContainer) {
+            thumbContainer.addEventListener('touchstart', e => {
                 touchStartX = e.changedTouches[0].screenX;
             });
-
-            thumbnailCarousel.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
+            thumbContainer.addEventListener('touchend', e => {
+                const touchEndX = e.changedTouches[0].screenX;
                 if (touchStartX - touchEndX > 50) {
-                    goToThumbnailSlide(Math.min(currentThumbnailSlide + 1, totalThumbnailSlides - 1));
-                }
-                if (touchEndX - touchStartX > 50) {
-                    goToThumbnailSlide(Math.max(currentThumbnailSlide - 1, 0));
-                }
-            });
-        }
-
-        const pricingCarousel = document.querySelector('.pricing-carousel-container');
-        if (pricingCarousel) {
-            pricingCarousel.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-
-            pricingCarousel.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                if (touchStartX - touchEndX > 50) {
-                    goToPricingSlide(Math.min(currentPricingSlide + 1, totalPricingSlides - 1));
-                }
-                if (touchEndX - touchStartX > 50) {
-                    goToPricingSlide(Math.max(currentPricingSlide - 1, 0));
+                    goToThumbnailSlide(Math.min(currentThumbSlide + 1, thumbSlides.length - 1));
+                } else if (touchEndX - touchStartX > 50) {
+                    goToThumbnailSlide(Math.max(currentThumbSlide - 1, 0));
                 }
             });
         }
