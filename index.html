@@ -502,7 +502,7 @@
             letter-spacing: 1px;
         }
 
-        /* Thumbnails Section */
+        /* Thumbnails Section - Unified Approach */
         .thumbnails { background: var(--black); }
 
         .thumbnails-header {
@@ -537,7 +537,7 @@
             color: white;
         }
 
-        /* Desktop Grid */
+        /* Thumbnail Grid - Works for both desktop and mobile */
         .thumbnail-grid {
             max-width: 900px;
             margin: 0 auto;
@@ -572,7 +572,7 @@
 
         .thumbnail-card:hover img { opacity: 0.4; }
 
-        /* Desktop: Blue button that disappears on hover */
+        /* Blue button that disappears on hover */
         .view-btn {
             position: absolute;
             bottom: 1rem;
@@ -669,58 +669,11 @@
             letter-spacing: 0.5px;
         }
 
-        /* Mobile Thumbnail Carousel */
-        .thumbnail-carousel-wrapper {
-            display: none;
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
+        /* Pricing Section */
+        .pricing { 
+            background: var(--charcoal);
+            padding: 3rem 5%;
         }
-
-        .thumbnail-carousel-container {
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .thumbnail-carousel-track {
-            display: flex;
-            transition: transform 0.4s ease;
-        }
-
-        .thumbnail-carousel-slide {
-            min-width: 100%;
-            flex-shrink: 0;
-            padding: 0 0.5rem;
-        }
-
-        .thumbnail-carousel-slide .thumbnail-card {
-            aspect-ratio: 16/10;
-        }
-
-        .thumbnail-carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .thumbnail-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--border);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .thumbnail-dot.active {
-            background: var(--accent);
-            width: 20px;
-            border-radius: 4px;
-        }
-
-        /* Pricing Section - Clean Desktop */
-        .pricing { background: var(--charcoal); }
 
         .pricing-grid {
             max-width: 1000px;
@@ -821,40 +774,6 @@
             font-style: italic;
         }
 
-        /* Mobile Pricing - Clean Simple Cards */
-        .pricing-mobile {
-            display: none;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .pricing-card-mobile {
-            background: var(--black);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-card-mobile.featured {
-            border: 2px solid var(--accent);
-            position: relative;
-        }
-
-        .pricing-card-mobile.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -8px;
-            left: 1rem;
-            background: var(--accent);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            border-radius: 4px;
-        }
-
         /* About Section */
         .about { background: var(--black); }
 
@@ -862,7 +781,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 1.5fr 1fr);
             gap: 3rem;
             align-items: center;
         }
@@ -976,7 +895,7 @@
 
         .form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr);
             gap: 1.25rem;
             margin-bottom: 1.25rem;
         }
@@ -1045,7 +964,7 @@
             max-width: 750px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr);
             gap: 2.5rem;
             align-items: center;
         }
@@ -1334,10 +1253,15 @@
 
             .form-container { padding: 1.5rem; }
 
-            /* Thumbnails: Show carousel, hide grid */
-            .thumbnail-grid { display: none; }
+            /* Thumbnails: Single column on mobile */
+            .thumbnail-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
 
-            .thumbnail-carousel-wrapper { display: block; }
+            .thumbnail-card {
+                aspect-ratio: 16/10;
+            }
 
             .thumbnails-tabs { justify-content: center; }
 
@@ -1357,10 +1281,16 @@
                 padding: 0.75rem 1.25rem;
             }
 
-            /* Pricing: Show mobile cards, hide desktop grid */
-            .pricing-grid { display: none; }
+            /* Pricing: Stack with padding */
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                gap: 2rem;
+            }
 
-            .pricing-mobile { display: block; }
+            .pricing-card.featured {
+                transform: none;
+            }
 
             h2 { font-size: 1.4rem; }
 
@@ -1368,13 +1298,18 @@
         }
 
         @media (max-width: 480px) {
-            .pricing-card-mobile { padding: 1.25rem; }
+            .pricing-card { padding: 1.5rem; }
 
             .price { font-size: 1.75rem; }
 
             .meme-grid { gap: 0.75rem; }
 
             .meme-card { padding: 1rem; }
+
+            .thumbnail-grid {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
         }
     </style>
 </head>
@@ -1556,7 +1491,7 @@
         </div>
     </section>
 
-    <!-- Thumbnails Section -->
+    <!-- Thumbnails Section - Simple Grid -->
     <section id="thumbnails" class="thumbnails">
         <div class="thumbnails-header">
             <div class="section-header" style="margin-bottom: 0;">
@@ -1571,7 +1506,7 @@
             </div>
         </div>
 
-        <!-- Desktop Grid -->
+        <!-- Simple Grid - Works for all screen sizes -->
         <div class="thumbnail-grid" id="thumbnailGrid">
             <article class="thumbnail-card" data-category="viral">
                 <img src="images/thumbnail1.jpg" alt="Travel Series Thumbnail">
@@ -1649,99 +1584,6 @@
                 </div>
             </article>
         </div>
-
-        <!-- Mobile Carousel -->
-        <div class="thumbnail-carousel-wrapper">
-            <div class="thumbnail-carousel-container">
-                <div class="thumbnail-carousel-track" id="thumbnailCarouselTrack">
-                    <div class="thumbnail-carousel-slide">
-                        <div class="thumbnail-card" data-category="viral">
-                            <img src="images/thumbnail1.jpg" alt="Travel Series Thumbnail">
-                            <div class="thumbnail-overlay">
-                                <div class="thumbnail-content">
-                                    <div class="thumbnail-meta">
-                                        <span>Viral Series</span>
-                                        <span>•</span>
-                                        <span>2.4M Views</span>
-                                    </div>
-                                    <h3>Travel Series Revolution</h3>
-                                    <div class="thumbnail-case-study">
-                                        <span class="case-study-highlight">The Challenge</span>
-                                        Client's travel content was underperforming with 2% CTR. Developed a consistent orange/teal color grading system with bold typography that increased CTR to 8.5%.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="thumbnail-carousel-slide">
-                        <div class="thumbnail-card" data-category="portrait">
-                            <img src="images/thumbnail2.jpg" alt="Fitness Brand Thumbnail">
-                            <div class="thumbnail-overlay">
-                                <div class="thumbnail-content">
-                                    <div class="thumbnail-meta">
-                                        <span>Portrait Focus</span>
-                                        <span>•</span>
-                                        <span>340% Increase</span>
-                                    </div>
-                                    <h3>Fitness Brand Launch</h3>
-                                    <div class="thumbnail-case-study">
-                                        <span class="case-study-highlight">The Solution</span>
-                                        Implemented face-forward emotional triggers with high-contrast lighting. A/B tested 4 variations to find optimal expression intensity.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="thumbnail-carousel-slide">
-                        <div class="thumbnail-card" data-category="minimal">
-                            <img src="images/thumbnail3.jpg" alt="Tech Reviews Thumbnail">
-                            <div class="thumbnail-overlay">
-                                <div class="thumbnail-content">
-                                    <div class="thumbnail-meta">
-                                        <span>Minimal Design</span>
-                                        <span>•</span>
-                                        <span>Clean Aesthetic</span>
-                                    </div>
-                                    <h3>Tech Review Minimalism</h3>
-                                    <div class="thumbnail-case-study">
-                                        <span class="case-study-highlight">The Approach</span>
-                                        Stripped away clutter to focus on product-centric composition. Used negative space strategically to draw eye to key features.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="thumbnail-carousel-slide">
-                        <div class="thumbnail-card" data-category="viral">
-                            <img src="images/thumbnail1.jpg" alt="Comedy Channel Thumbnail">
-                            <div class="thumbnail-overlay">
-                                <div class="thumbnail-content">
-                                    <div class="thumbnail-meta">
-                                        <span>Viral Strategy</span>
-                                        <span>•</span>
-                                        <span>1.2M Subscribers</span>
-                                    </div>
-                                    <h3>Comedy Channel Growth</h3>
-                                    <div class="thumbnail-case-study">
-                                        <span class="case-study-highlight">The Result</span>
-                                        Created "reaction + context" formula combining expressive faces with mystery text. Systematized production for daily uploads.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="thumbnail-carousel-dots">
-                <span class="thumbnail-dot active" onclick="goToThumbnailSlide(0)"></span>
-                <span class="thumbnail-dot" onclick="goToThumbnailSlide(1)"></span>
-                <span class="thumbnail-dot" onclick="goToThumbnailSlide(2)"></span>
-                <span class="thumbnail-dot" onclick="goToThumbnailSlide(3)"></span>
-            </div>
-        </div>
     </section>
 
     <!-- Pricing Section -->
@@ -1751,7 +1593,6 @@
             <p class="section-subtitle">Flexible Plans for Every Creator</p>
         </div>
 
-        <!-- Desktop Grid -->
         <div class="pricing-grid">
             <article class="pricing-card">
                 <div class="tier-label">Tier 1 — Starter</div>
@@ -1799,48 +1640,6 @@
                 </ul>
                 <div class="best-for">Best for high-volume partnerships.</div>
             </article>
-        </div>
-
-        <!-- Mobile Simple Cards -->
-        <div class="pricing-mobile">
-            <div class="pricing-card-mobile">
-                <div class="tier-label">Tier 1 — Starter</div>
-                <div class="price">$500 <span>per video</span></div>
-                <ul>
-                    <li>Up to 15-minute finished video</li>
-                    <li>Full editing and visual refinement</li>
-                    <li>Up to 12 hours production time</li>
-                    <li>2 revision rounds</li>
-                    <li>SEO optimization included</li>
-                </ul>
-                <div class="best-for">Best for one-off or trial projects.</div>
-            </div>
-
-            <div class="pricing-card-mobile featured">
-                <div class="tier-label">Tier 2 — Professional</div>
-                <div class="price">$1,800 <span>per month</span></div>
-                <ul>
-                    <li>Up to 45 hours production time</li>
-                    <li>3-4 videos per month</li>
-                    <li>Priority scheduling</li>
-                    <li>Thumbnail design included</li>
-                    <li>Monthly analytics report</li>
-                </ul>
-                <div class="best-for">Best for consistent content production.</div>
-            </div>
-
-            <div class="pricing-card-mobile">
-                <div class="tier-label">Tier 3 — Enterprise</div>
-                <div class="price">$3,000 <span>per month</span></div>
-                <ul>
-                    <li>Up to 80 hours production time</li>
-                    <li>6-8 videos per month</li>
-                    <li>Unlimited minor revisions</li>
-                    <li>Advanced SEO strategy</li>
-                    <li>Custom thumbnail package</li>
-                </ul>
-                <div class="best-for">Best for high-volume partnerships.</div>
-            </div>
         </div>
     </section>
 
@@ -2052,7 +1851,6 @@
     </footer>
 
     <script>
-        // Featured Edits Carousel
         let currentSlide = 2;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
@@ -2086,36 +1884,11 @@
             updateCarousel();
         }
 
-        // Thumbnail Carousel (Mobile)
-        let currentThumbSlide = 0;
-        const thumbSlides = document.querySelectorAll('.thumbnail-carousel-slide');
-        const thumbDots = document.querySelectorAll('.thumbnail-dot');
-        const thumbTrack = document.getElementById('thumbnailCarouselTrack');
-
-        function updateThumbnailCarousel() {
-            thumbSlides.forEach((slide, index) => {
-                slide.classList.remove('active');
-                thumbDots[index].classList.remove('active');
-            });
-            
-            thumbSlides[currentThumbSlide].classList.add('active');
-            thumbDots[currentThumbSlide].classList.add('active');
-            
-            const offset = -(currentThumbSlide * 100);
-            thumbTrack.style.transform = `translateX(${offset}%)`;
-        }
-
-        function goToThumbnailSlide(index) {
-            currentThumbSlide = index;
-            updateThumbnailCarousel();
-        }
-
-        // Thumbnail Filter (Desktop)
         function filterThumbnails(category, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            const cards = document.querySelectorAll('.thumbnail-grid .thumbnail-card');
+            const cards = document.querySelectorAll('.thumbnail-card');
             cards.forEach(card => {
                 if (category === 'all' || card.dataset.category === category) {
                     card.style.display = 'block';
@@ -2133,17 +1906,12 @@
             });
         }
 
-        // Initialize
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                updateCarousel();
-                updateThumbnailCarousel();
-            }, 100);
+            setTimeout(updateCarousel, 100);
         });
         
         window.addEventListener('resize', updateCarousel);
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -2151,23 +1919,6 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-
-        // Touch swipe for thumbnail carousel
-        let touchStartX = 0;
-        const thumbContainer = document.querySelector('.thumbnail-carousel-container');
-        if (thumbContainer) {
-            thumbContainer.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-            thumbContainer.addEventListener('touchend', e => {
-                const touchEndX = e.changedTouches[0].screenX;
-                if (touchStartX - touchEndX > 50) {
-                    goToThumbnailSlide(Math.min(currentThumbSlide + 1, thumbSlides.length - 1));
-                } else if (touchEndX - touchStartX > 50) {
-                    goToThumbnailSlide(Math.max(currentThumbSlide - 1, 0));
-                }
-            });
-        }
     </script>
 
 </body>
