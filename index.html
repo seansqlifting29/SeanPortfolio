@@ -779,7 +779,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Pricing Section - Colored Tiers */
+        /* Pricing Section - Colored Tiers - SUBTLE HOVER ONLY */
         .pricing {
             background: var(--charcoal);
             padding: 3rem 5%;
@@ -850,6 +850,7 @@
             transition: all 0.3s ease;
         }
 
+        /* Colored top border only - no heavy animation */
         .pricing-card::before {
             content: '';
             position: absolute;
@@ -858,14 +859,9 @@
             right: 0;
             height: 4px;
             background: var(--tier-color);
-            transition: height 0.3s ease;
         }
 
-        .pricing-card:hover::before {
-            height: 100%;
-            opacity: 0.1;
-        }
-
+        /* Subtle hover - border color change and slight lift only */
         .pricing-card:hover {
             border-color: var(--tier-color);
             transform: translateY(-5px);
@@ -1383,8 +1379,8 @@
         }
 
         .social-links a {
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1392,14 +1388,16 @@
             transition: all 0.3s ease;
             border: 1px solid var(--border);
             border-radius: 50%;
-            padding: 8px;
+            padding: 10px;
             touch-action: manipulation;
+            background: var(--charcoal);
         }
 
         .social-links a:hover {
             opacity: 1;
             border-color: var(--accent);
             transform: translateY(-3px);
+            background: var(--charcoal-light);
         }
 
         .social-links img {
@@ -2263,9 +2261,10 @@
     <section id="contact" class="contact">
         <div class="contact-content">
             <p class="contact-label">Let's Work Together</p>
-            div class="contact-email-wrapper">
+            
+            <div class="contact-email-wrapper">
                 <a href="mailto:styndale3gatech@gmail.com" class="contact-email">
-                    <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     styndale3gatech@gmail.com
@@ -2273,13 +2272,13 @@
             </div>
             
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/seantyndale/ " target="_blank" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/seantyndale/" target="_blank" title="LinkedIn">
                     <img src="icons/LinkedIn.png" alt="LinkedIn">
                 </a>
-                <a href="https://github.com/seansqlifting29 " target="_blank" title="GitHub">
+                <a href="https://github.com/seansqlifting29" target="_blank" title="GitHub">
                     <img src="icons/GitHub.png" alt="GitHub">
                 </a>
-                <a href="https://www.instagram.com/sean_da_rager/ " target="_blank" title="Instagram">
+                <a href="https://www.instagram.com/sean_da_rager/" target="_blank" title="Instagram">
                     <img src="icons/Instagram.png" alt="Instagram">
                 </a>
             </div>
