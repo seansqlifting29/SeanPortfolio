@@ -23,6 +23,10 @@
             --text-secondary: #a0a0a0;
             --text-muted: #6c757d;
             --border: #2a2a2a;
+            /* Tier colors */
+            --tier-green: #2d5a3d;
+            --tier-yellow: #8b7355;
+            --tier-blue: #2c5aa0;
             /* Muted skill colors */
             --skill-blue: #1e3a5f;
             --skill-green: #1e4a3e;
@@ -367,50 +371,45 @@
 
         .carousel-arrow {
             position: absolute;
-            top: 40%;
+            top: 50%;
             transform: translateY(-50%);
-            background: rgba(44, 90, 160, 0.15);
-            border: 1px solid rgba(44, 90, 160, 0.3);
-            color: var(--text-secondary);
-            width: 44px;
-            height: 70px;
+            background: var(--black);
+            border: 2px solid var(--border);
+            color: var(--text-primary);
+            width: 50px;
+            height: 50px;
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
-            border-radius: 8px;
+            border-radius: 50%;
             touch-action: manipulation;
             -webkit-touch-callout: none;
             user-select: none;
             z-index: 10;
-            display: none; /* Hidden by default on desktop */
+            display: none;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
 
         .carousel-arrow:hover {
-            background: rgba(44, 90, 160, 0.3);
-            border-color: var(--accent);
-            color: var(--accent);
+            background: var(--charcoal-light);
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
+            transform: translateY(-50%) scale(1.1);
         }
 
         .carousel-arrow.prev {
-            left: 0;
+            left: 1rem;
         }
 
         .carousel-arrow.next {
-            right: 0;
+            right: 1rem;
         }
 
         .carousel-arrow svg {
-            width: 24px;
-            height: 24px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .carousel-arrow:hover svg {
-            opacity: 1;
+            width: 20px;
+            height: 20px;
         }
 
         .carousel-controls {
@@ -584,7 +583,7 @@
             letter-spacing: 1px;
         }
 
-        /* Thumbnails Section - Updated with Always Visible Buttons */
+        /* Thumbnails Section - Updated with Bottom Left Case Study Buttons */
         .thumbnails {
             background: var(--black);
             padding: 4rem 5%;
@@ -656,42 +655,51 @@
             height: 100%;
             object-fit: cover;
             transition: all 0.4s ease;
-            opacity: 0.85; /* Slightly less dark initially */
+            opacity: 0.85;
         }
 
         .thumbnail-card:hover img {
             transform: scale(1.05);
-            opacity: 0.4; /* Darker when description shows */
+            opacity: 0.4;
         }
 
-/* THUMBNAIL BUTTON - SOLID BLUE CENTERED */
-.view-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0.75rem 1.5rem;
-    background: var(--accent); /* Solid blue */
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: 2px solid var(--accent);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 5;
-    opacity: 1;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
+        /* Dark shade overlay on thumbnails */
+        .thumbnail-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
 
-.thumbnail-card:hover .view-btn {
-    opacity: 0;
-    transform: translate(-50%, -50%) translateY(10px);
-}
+        /* CASE STUDY BUTTON - BOTTOM LEFT BLACK */
+        .view-btn {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            padding: 0.6rem 1rem;
+            background: var(--black);
+            color: var(--text-primary);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            opacity: 1;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
 
+        .thumbnail-card:hover .view-btn {
+            background: var(--charcoal-light);
+            border-color: var(--text-secondary);
+            transform: translateY(-2px);
+        }
 
         /* Overlay with case study - hidden initially */
         .thumbnail-overlay {
@@ -704,7 +712,8 @@
             flex-direction: column;
             justify-content: flex-end;
             padding: 1.25rem;
-            padding-bottom: 3.5rem; /* Space for button */
+            padding-bottom: 3.5rem;
+            z-index: 5;
         }
 
         .thumbnail-card:hover .thumbnail-overlay {
@@ -770,75 +779,121 @@
             letter-spacing: 0.5px;
         }
 
-        /* Pricing Section - Ultra Compact Mobile */
+        /* Pricing Section - Colored Tiers */
         .pricing {
             background: var(--charcoal);
             padding: 3rem 5%;
         }
 
-/* TIER-BASED SIZING - DESKTOP */
-@media (min-width: 769px) {
-    .pricing-grid {
-        max-width: 1100px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1.2fr 1fr; /* Middle tier 20% wider */
-        gap: 1.5rem;
-        align-items: start;
-    }
+        /* TIER-BASED SIZING - DESKTOP */
+        @media (min-width: 769px) {
+            .pricing-grid {
+                max-width: 1100px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1.2fr 1fr;
+                gap: 1.5rem;
+                align-items: start;
+            }
 
-    .pricing-card:nth-child(1) {
-        transform: scale(0.95);
-        opacity: 0.9;
-    }
+            .pricing-card:nth-child(1) {
+                transform: scale(0.95);
+                opacity: 0.9;
+                --tier-color: var(--tier-green);
+            }
 
-    .pricing-card:nth-child(2) {
-        transform: scale(1.05);
-        z-index: 2;
-    }
+            .pricing-card:nth-child(2) {
+                transform: scale(1.05);
+                z-index: 2;
+                --tier-color: var(--tier-yellow);
+            }
 
-    .pricing-card:nth-child(3) {
-        transform: scale(0.98);
-        opacity: 0.95;
-    }
-}
+            .pricing-card:nth-child(3) {
+                transform: scale(0.98);
+                opacity: 0.95;
+                --tier-color: var(--tier-blue);
+            }
+        }
 
-/* TIER-BASED SIZING - MOBILE */
-@media (max-width: 768px) {
-    .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        gap: 1.5rem;
-    }
+        /* TIER-BASED SIZING - MOBILE */
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                gap: 1.5rem;
+            }
 
-    .pricing-card:nth-child(1) {
-        min-height: auto;
-    }
+            .pricing-card:nth-child(1) {
+                min-height: auto;
+                --tier-color: var(--tier-green);
+            }
 
-    .pricing-card:nth-child(2) {
-        min-height: auto;
-        transform: scale(1.02);
-    }
+            .pricing-card:nth-child(2) {
+                min-height: auto;
+                transform: scale(1.02);
+                --tier-color: var(--tier-yellow);
+            }
 
-    .pricing-card:nth-child(3) {
-        min-height: auto;
-    }
-}
+            .pricing-card:nth-child(3) {
+                min-height: auto;
+                --tier-color: var(--tier-blue);
+            }
+        }
+
+        .pricing-card {
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--tier-color);
+            transition: height 0.3s ease;
+        }
+
+        .pricing-card:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--tier-color);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .pricing-card:nth-child(2):hover {
+            transform: scale(1.05) translateY(-5px);
+        }
 
         .tier-label {
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: var(--accent);
+            color: var(--tier-color);
             margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
         }
 
         .price {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.25rem;
             color: var(--text-primary);
+            position: relative;
+            z-index: 1;
         }
 
         .price span {
@@ -849,11 +904,13 @@
 
         .pricing-card ul {
             list-style: none;
-            margin: 1.25rem 0;
+            margin: 1.5rem 0;
+            position: relative;
+            z-index: 1;
         }
 
         .pricing-card li {
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
             color: var(--text-secondary);
             font-size: 0.85rem;
             position: relative;
@@ -870,7 +927,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: var(--tier-color);
             font-weight: bold;
             font-size: 0.8rem;
         }
@@ -883,6 +940,8 @@
             color: var(--text-muted);
             font-style: italic;
             line-height: 1.4;
+            position: relative;
+            z-index: 1;
         }
 
         /* About Section */
@@ -1469,7 +1528,6 @@
                 max-width: 100%;
             }
 
-
             .carousel-dots {
                 margin-top: 1rem;
             }
@@ -1566,8 +1624,10 @@
             }
 
             .view-btn {
-                padding: 0.6rem 1.25rem;
-                font-size: 0.7rem;
+                padding: 0.5rem 0.875rem;
+                font-size: 0.65rem;
+                bottom: 0.75rem;
+                left: 0.75rem;
             }
 
             .section-header {
@@ -1609,68 +1669,98 @@
                 padding: 1rem;
             }
         }
-/* FEATURED EDITS - TABLET/MOBILE LARGER CENTER */
-@media (max-width: 968px) {
-    .carousel-slide {
-        min-width: 85%;
-        max-width: 600px;
-    }
 
-    .carousel-slide.active {
-        transform: scale(1.15);
-    }
+        /* FEATURED EDITS - TABLET/MOBILE LARGER CENTER */
+        @media (max-width: 968px) {
+            .carousel-slide {
+                min-width: 85%;
+                max-width: 600px;
+            }
 
-    .carousel-container {
-        padding: 0 2rem;
-    }
+            .carousel-slide.active {
+                transform: scale(1.15);
+            }
 
-    .carousel-track {
-        padding: 2rem 0;
-    }
+            .carousel-container {
+                padding: 0 4rem;
+            }
 
-    /* ARROWS - TABLET */
-    .carousel-arrow {
-        display: flex;
-        width: 40px;
-        height: 60px;
-    }
+            .carousel-track {
+                padding: 2rem 0;
+            }
 
-    .carousel-arrow.prev {
-        left: 0.5rem;
-    }
+            /* ARROWS - TABLET - Positioned outside */
+            .carousel-arrow {
+                display: flex;
+                width: 44px;
+                height: 44px;
+                background: var(--black);
+                border: 2px solid var(--border);
+            }
 
-    .carousel-arrow.next {
-        right: 0.5rem;
-    }
-}
+            .carousel-arrow.prev {
+                left: 0.5rem;
+            }
 
-@media (max-width: 768px) {
-    .carousel-slide {
-        min-width: 90%;
-    }
+            .carousel-arrow.next {
+                right: 0.5rem;
+            }
+        }
 
-    .carousel-slide.active {
-        transform: scale(1.2);
-    }
+        @media (max-width: 768px) {
+            .carousel-slide {
+                min-width: 85%;
+            }
 
-    .carousel-container {
-        padding: 0 1rem;
-    }
+            .carousel-slide.active {
+                transform: scale(1.15);
+            }
 
-    /* ARROWS - MOBILE */
-    .carousel-arrow {
-        width: 36px;
-        height: 50px;
-    }
+            .carousel-container {
+                padding: 0 3.5rem;
+            }
 
-    .carousel-arrow.prev {
-        left: 0;
-    }
+            /* ARROWS - MOBILE - Clean positioned on edges */
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                background: var(--black);
+                border: 2px solid var(--border);
+                border-radius: 50%;
+            }
 
-    .carousel-arrow.next {
-        right: 0;
-    }
-}
+            .carousel-arrow.prev {
+                left: 0.25rem;
+            }
+
+            .carousel-arrow.next {
+                right: 0.25rem;
+            }
+
+            .carousel-arrow svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                padding: 0 3rem;
+            }
+
+            .carousel-arrow {
+                width: 36px;
+                height: 36px;
+            }
+
+            .carousel-arrow.prev {
+                left: 0;
+            }
+
+            .carousel-arrow.next {
+                right: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1851,7 +1941,7 @@
         </div>
     </section>
 
-    <!-- Thumbnails Section - Always Visible Buttons -->
+    <!-- Thumbnails Section - Updated with Numbered Case Study Buttons -->
     <section id="thumbnails" class="thumbnails">
         <div class="thumbnails-header">
             <div class="section-header" style="margin-bottom: 0;">
@@ -1868,7 +1958,7 @@
         <div class="thumbnail-grid" id="thumbnailGrid">
             <article class="thumbnail-card" data-category="viral" onclick="openCaseStudy('travel-series')">
                 <img src="images/thumbnail1.jpg" alt="Travel Series Thumbnail">
-                <button class="view-btn">View Case Study</button>
+                <button class="view-btn">Case Study No.1</button>
                 <div class="thumbnail-overlay">
                     <div class="thumbnail-content">
                         <div class="thumbnail-meta">
@@ -1887,7 +1977,7 @@
             
             <article class="thumbnail-card" data-category="portrait" onclick="openCaseStudy('fitness-brand')">
                 <img src="images/thumbnail2.jpg" alt="Fitness Brand Thumbnail">
-                <button class="view-btn">View Case Study</button>
+                <button class="view-btn">Case Study No.2</button>
                 <div class="thumbnail-overlay">
                     <div class="thumbnail-content">
                         <div class="thumbnail-meta">
@@ -1906,7 +1996,7 @@
             
             <article class="thumbnail-card" data-category="minimal" onclick="openCaseStudy('tech-reviews')">
                 <img src="images/thumbnail3.jpg" alt="Tech Reviews Thumbnail">
-                <button class="view-btn">View Case Study</button>
+                <button class="view-btn">Case Study No.3</button>
                 <div class="thumbnail-overlay">
                     <div class="thumbnail-content">
                         <div class="thumbnail-meta">
@@ -1925,7 +2015,7 @@
             
             <article class="thumbnail-card" data-category="viral" onclick="openCaseStudy('comedy-channel')">
                 <img src="images/thumbnail1.jpg" alt="Comedy Channel Thumbnail">
-                <button class="view-btn">View Case Study</button>
+                <button class="view-btn">Case Study No.4</button>
                 <div class="thumbnail-overlay">
                     <div class="thumbnail-content">
                         <div class="thumbnail-meta">
@@ -1944,7 +2034,7 @@
         </div>
     </section>
 
-    <!-- Pricing Section - Ultra Compact -->
+    <!-- Pricing Section - Colored Tiers -->
     <section id="pricing" class="pricing">
         <div class="section-header">
             <h2>Video Production Packages</h2>
@@ -2173,7 +2263,7 @@
     <section id="contact" class="contact">
         <div class="contact-content">
             <p class="contact-label">Let's Work Together</p>
-            <div class="contact-email-wrapper">
+            div class="contact-email-wrapper">
                 <a href="mailto:styndale3gatech@gmail.com" class="contact-email">
                     <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
