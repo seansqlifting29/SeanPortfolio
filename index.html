@@ -23,7 +23,6 @@
             --text-secondary: #a0a0a0;
             --text-muted: #6c757d;
             --border: #2a2a2a;
-            /* Muted skill colors */
             --skill-blue: #1e3a5f;
             --skill-green: #1e4a3e;
             --skill-orange: #5a3d1e;
@@ -136,7 +135,7 @@
             filter: brightness(0) invert(1);
         }
 
-        /* Hero Section - Bigger & Bolder */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -279,7 +278,7 @@
             letter-spacing: 1px;
         }
 
-        /* Video Carousel Section - Fixed with Loop and 5 Slides */
+        /* Video Carousel Section */
         .portfolio {
             background: var(--black);
             padding: 4rem 5%;
@@ -357,7 +356,6 @@
             font-size: 0.9rem;
         }
 
-        /* Carousel Controls - Desktop hidden, mobile visible */
         .carousel-wrapper {
             position: relative;
             display: flex;
@@ -382,7 +380,7 @@
             -webkit-touch-callout: none;
             user-select: none;
             z-index: 10;
-            display: none; /* Hidden by default on desktop */
+            display: none;
             align-items: center;
             justify-content: center;
             backdrop-filter: blur(4px);
@@ -394,13 +392,8 @@
             color: var(--accent);
         }
 
-        .carousel-arrow.prev {
-            left: 0;
-        }
-
-        .carousel-arrow.next {
-            right: 0;
-        }
+        .carousel-arrow.prev { left: 0.5rem; }
+        .carousel-arrow.next { right: 0.5rem; }
 
         .carousel-arrow svg {
             width: 24px;
@@ -409,9 +402,7 @@
             transition: opacity 0.3s ease;
         }
 
-        .carousel-arrow:hover svg {
-            opacity: 1;
-        }
+        .carousel-arrow:hover svg { opacity: 1; }
 
         .carousel-controls {
             display: flex;
@@ -463,7 +454,7 @@
             border-radius: 4px;
         }
 
-        /* Video Creator Section with Software Logos - Themed Containment */
+        /* Creator Section */
         .creator-photo-section {
             background: var(--charcoal);
             padding: 4rem 5%;
@@ -501,7 +492,6 @@
             font-size: 0.95rem;
         }
 
-        /* Software Section - Themed Containment with White Logo Boxes */
         .software-containment {
             margin-top: 1.5rem;
             padding: 1.5rem;
@@ -559,9 +549,7 @@
             object-fit: contain;
         }
 
-        .software-info {
-            flex: 1;
-        }
+        .software-info { flex: 1; }
 
         .software-info h4 {
             font-size: 0.95rem;
@@ -584,7 +572,7 @@
             letter-spacing: 1px;
         }
 
-        /* Thumbnails Section - Updated with Always Visible Buttons */
+        /* Thumbnails Section - Desktop Grid / Mobile Carousel */
         .thumbnails {
             background: var(--black);
             padding: 4rem 5%;
@@ -619,13 +607,13 @@
             touch-action: manipulation;
         }
 
-        .tab-btn:hover,
-        .tab-btn.active {
+        .tab-btn:hover, .tab-btn.active {
             background: var(--accent);
             border-color: var(--accent);
             color: white;
         }
 
+        /* Desktop Grid */
         .thumbnail-grid {
             max-width: 900px;
             margin: 0 auto;
@@ -656,42 +644,37 @@
             height: 100%;
             object-fit: cover;
             transition: all 0.4s ease;
-            opacity: 0.85; /* Slightly less dark initially */
+            opacity: 0.85;
         }
 
-        .thumbnail-card:hover img {
-            transform: scale(1.05);
-            opacity: 0.4; /* Darker when description shows */
-        }
+        .thumbnail-card:hover img { opacity: 0.4; }
 
-        /* Always visible button */
+        /* Desktop: Non-clickable dark transparent button that disappears on hover */
         .view-btn {
             position: absolute;
             bottom: 1rem;
             left: 50%;
             transform: translateX(-50%);
             padding: 0.6rem 1.25rem;
-            background: var(--accent);
-            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--text-secondary);
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border: none;
+            border: 1px solid var(--border);
             border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            pointer-events: none;
             z-index: 5;
             opacity: 1;
             white-space: nowrap;
+            transition: all 0.3s ease;
         }
 
-        .view-btn:hover {
-            background: white;
-            color: var(--accent);
+        .thumbnail-card:hover .view-btn {
+            opacity: 0;
         }
 
-        /* Overlay with case study - hidden initially */
         .thumbnail-overlay {
             position: absolute;
             inset: 0;
@@ -702,12 +685,9 @@
             flex-direction: column;
             justify-content: flex-end;
             padding: 1.25rem;
-            padding-bottom: 3.5rem; /* Space for button */
         }
 
-        .thumbnail-card:hover .thumbnail-overlay {
-            opacity: 1;
-        }
+        .thumbnail-card:hover .thumbnail-overlay { opacity: 1; }
 
         .thumbnail-content h3 {
             color: white;
@@ -768,7 +748,66 @@
             letter-spacing: 0.5px;
         }
 
-        /* Pricing Section - Ultra Compact Mobile */
+        /* Mobile Carousel Styles */
+        .thumbnail-carousel-wrapper {
+            display: none;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .thumbnail-carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .thumbnail-carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .thumbnail-carousel-slide {
+            min-width: 85%;
+            flex-shrink: 0;
+            opacity: 0.4;
+            transform: scale(0.9);
+            transition: all 0.4s ease;
+        }
+
+        .thumbnail-carousel-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .thumbnail-carousel-slide .thumbnail-card {
+            aspect-ratio: 16/10;
+        }
+
+        .thumbnail-carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .thumbnail-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail-dot.active {
+            background: var(--accent);
+            width: 20px;
+            border-radius: 4px;
+        }
+
+        /* Pricing Section - Tier Based Desktop */
         .pricing {
             background: var(--charcoal);
             padding: 3rem 5%;
@@ -778,29 +817,72 @@
             max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            align-items: stretch;
+        }
+
+        /* Tier 1 - Basic */
+        .pricing-card:nth-child(1) {
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 12px 0 0 12px;
+            position: relative;
+            z-index: 1;
+            transform: scale(0.95);
+            opacity: 0.9;
+        }
+
+        /* Tier 2 - Featured/Premium (Middle) */
+        .pricing-card:nth-child(2) {
+            background: var(--black);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            position: relative;
+            z-index: 3;
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(44, 90, 160, 0.15);
+        }
+
+        .pricing-card:nth-child(2)::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 0.4rem 1rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 20px;
+        }
+
+        /* Tier 3 - Ultimate */
+        .pricing-card:nth-child(3) {
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 0 12px 12px 0;
+            position: relative;
+            z-index: 2;
+            transform: scale(0.98);
         }
 
         .pricing-card {
-            background: var(--black);
-            border: 1px solid var(--border);
-            padding: 1.75rem;
-            position: relative;
+            padding: 2rem 1.5rem;
             transition: all 0.3s ease;
-            border-radius: 8px;
         }
 
         .pricing-card:hover {
             border-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: scale(1.02);
+            z-index: 4;
         }
 
-        .pricing-card.featured {
-            border-color: var(--accent);
-            box-shadow: 0 0 20px rgba(44, 90, 160, 0.08);
-        }
+        .pricing-card:nth-child(1):hover { transform: scale(0.98); }
+        .pricing-card:nth-child(2):hover { transform: scale(1.08); }
+        .pricing-card:nth-child(3):hover { transform: scale(1); }
 
         .tier-label {
             font-size: 0.7rem;
@@ -812,7 +894,7 @@
         }
 
         .price {
-            font-size: 2rem;
+            font-size: 2.25rem;
             font-weight: 700;
             margin-bottom: 0.25rem;
             color: var(--text-primary);
@@ -826,11 +908,11 @@
 
         .pricing-card ul {
             list-style: none;
-            margin: 1.25rem 0;
+            margin: 1.5rem 0;
         }
 
         .pricing-card li {
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
             color: var(--text-secondary);
             font-size: 0.85rem;
             position: relative;
@@ -839,9 +921,7 @@
             line-height: 1.4;
         }
 
-        .pricing-card li:last-child {
-            border-bottom: none;
-        }
+        .pricing-card li:last-child { border-bottom: none; }
 
         .pricing-card li::before {
             content: '→';
@@ -852,6 +932,18 @@
             font-size: 0.8rem;
         }
 
+        /* Feature indicators for tier differentiation */
+        .feature-count {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(44, 90, 160, 0.1);
+            border-radius: 12px;
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
         .best-for {
             margin-top: 1rem;
             padding-top: 1rem;
@@ -860,6 +952,113 @@
             color: var(--text-muted);
             font-style: italic;
             line-height: 1.4;
+        }
+
+        /* Mobile Pricing Carousel */
+        .pricing-carousel-wrapper {
+            display: none;
+            position: relative;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+
+        .pricing-carousel-container {
+            overflow: hidden;
+            background: var(--charcoal);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .pricing-carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+
+        .pricing-carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+            padding: 1.5rem;
+            opacity: 0.5;
+            transform: scale(0.9);
+            transition: all 0.4s ease;
+        }
+
+        .pricing-carousel-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .pricing-carousel-slide .pricing-card {
+            border: none;
+            background: transparent;
+            padding: 0;
+            transform: none;
+            opacity: 1;
+        }
+
+        .pricing-carousel-slide.active .pricing-card:nth-child(2)::before {
+            display: none;
+        }
+
+        .mobile-tier-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .mobile-tier-badge.free {
+            background: var(--border);
+            color: var(--text-secondary);
+        }
+
+        .mobile-tier-badge.premium {
+            background: var(--accent);
+            color: white;
+        }
+
+        .mobile-tier-badge.ultimate {
+            background: linear-gradient(135deg, var(--accent), #1e3a5f);
+            color: white;
+        }
+
+        .pricing-carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .pricing-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-dot.active {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        .pricing-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-dot.active::after {
+            border-color: var(--accent);
         }
 
         /* About Section */
@@ -900,7 +1099,6 @@
             font-size: 0.95rem;
         }
 
-        /* Skills - Four Boxes with Muted Colors */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -915,21 +1113,10 @@
             transition: all 0.3s ease;
         }
 
-        .skill-box:nth-child(1) {
-            background: var(--skill-blue);
-        }
-
-        .skill-box:nth-child(2) {
-            background: var(--skill-green);
-        }
-
-        .skill-box:nth-child(3) {
-            background: var(--skill-orange);
-        }
-
-        .skill-box:nth-child(4) {
-            background: var(--skill-purple);
-        }
+        .skill-box:nth-child(1) { background: var(--skill-blue); }
+        .skill-box:nth-child(2) { background: var(--skill-green); }
+        .skill-box:nth-child(3) { background: var(--skill-orange); }
+        .skill-box:nth-child(4) { background: var(--skill-purple); }
 
         .skill-box:hover {
             transform: translateY(-3px);
@@ -945,7 +1132,7 @@
             margin: 0;
         }
 
-        /* Meme Style Section - 3 items */
+        /* Meme Style Section */
         .meme-section {
             background: var(--charcoal);
             padding: 4rem 5%;
@@ -1020,9 +1207,7 @@
             flex-direction: column;
         }
 
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
+        .form-group.full-width { grid-column: 1 / -1; }
 
         label {
             font-size: 0.7rem;
@@ -1076,7 +1261,7 @@
             color: var(--accent);
         }
 
-        /* CV Download Section - Professional Compact Design */
+        /* CV Download Section */
         .cv-download {
             background: var(--charcoal);
             padding: 3rem 5%;
@@ -1155,9 +1340,7 @@
             box-shadow: 0 12px 24px rgba(0,0,0,0.2);
         }
 
-        .cv-card:hover::before {
-            transform: scaleX(1);
-        }
+        .cv-card:hover::before { transform: scaleX(1); }
 
         .cv-icon {
             width: 48px;
@@ -1220,7 +1403,7 @@
             height: 14px;
         }
 
-        /* Contact Section - Enhanced Email Styling */
+        /* Contact Section */
         .contact {
             background: var(--black);
             text-align: center;
@@ -1282,9 +1465,7 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
-        .contact-email:hover::before {
-            transform: scaleX(1);
-        }
+        .contact-email:hover::before { transform: scaleX(1); }
 
         .contact-email svg {
             width: 18px;
@@ -1292,7 +1473,6 @@
             color: var(--accent);
         }
 
-        /* Social Links */
         .social-links {
             display: flex;
             justify-content: center;
@@ -1343,66 +1523,42 @@
 
         /* Responsive */
         @media (max-width: 968px) {
-            section {
-                padding: 3rem 5%;
-            }
+            section { padding: 3rem 5%; }
 
-            .carousel-slide {
-                min-width: 75%;
-            }
-            
-            /* Show side arrows on tablet/mobile */
+            .carousel-slide { min-width: 75%; }
+
             .carousel-arrow {
                 display: flex;
                 width: 40px;
                 height: 60px;
             }
 
-            .carousel-arrow.prev {
-                left: 0.5rem;
-            }
+            .carousel-arrow.prev { left: 0.5rem; }
+            .carousel-arrow.next { right: 0.5rem; }
 
-            .carousel-arrow.next {
-                right: 0.5rem;
-            }
+            .carousel-container { padding: 0 3rem; }
 
-            .carousel-container {
-                padding: 0 3rem;
-            }
+            .carousel-controls { display: none; }
 
-            /* Hide bottom arrows on mobile/tablet */
-            .carousel-controls {
-                display: none;
-            }
-            
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 3rem;
             }
 
-            .hero-content h1 {
-                font-size: clamp(2.5rem, 8vw, 4rem);
-            }
+            .hero-content h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
 
-            .hero-image img {
-                max-width: 350px;
-            }
-            
-            .creator-container,
-            .about-container {
+            .hero-image img { max-width: 350px; }
+
+            .creator-container, .about-container {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 2.5rem;
             }
-            
-            .creator-photo,
-            .about-photo {
-                order: -1;
-            }
-            
-            .creator-photo img,
-            .about-photo img {
+
+            .creator-photo, .about-photo { order: -1; }
+
+            .creator-photo img, .about-photo img {
                 max-width: 300px;
                 margin: 0 auto;
                 display: block;
@@ -1423,13 +1579,9 @@
                 gap: 1rem;
             }
 
-            .meme-card {
-                padding: 1.25rem;
-            }
+            .meme-card { padding: 1.25rem; }
 
-            .cv-download {
-                padding: 3rem 5%;
-            }
+            .cv-download { padding: 3rem 5%; }
 
             .cv-container {
                 grid-template-columns: 1fr;
@@ -1437,84 +1589,57 @@
                 gap: 2rem;
             }
 
-            .cv-benefits {
-                align-items: center;
-            }
+            .cv-benefits { align-items: center; }
 
-            .thumbnail-grid {
-                gap: 1rem;
-                max-width: 600px;
-            }
+            .section-header { margin-bottom: 2rem; }
 
-            .thumbnail-card {
-                aspect-ratio: 16/10;
-            }
+            /* Desktop pricing adjustments for tablet */
+            .pricing-grid { gap: 0.5rem; }
 
-            .section-header {
-                margin-bottom: 2rem;
-            }
+            .pricing-card { padding: 1.5rem 1rem; }
+
+            .price { font-size: 1.75rem; }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+            .nav-links { display: none; }
 
             .hero {
                 padding: 7rem 5% 4rem;
                 min-height: auto;
             }
 
-            .hero-image img {
-                max-width: 100%;
-            }
+            .hero-image img { max-width: 100%; }
 
-            .carousel-slide {
-                min-width: 85%;
-            }
+            .carousel-slide { min-width: 85%; }
 
-            .carousel-container {
-                padding: 0 2.5rem;
-            }
+            .carousel-container { padding: 0 2.5rem; }
 
             .carousel-arrow {
                 width: 36px;
                 height: 50px;
             }
 
-            .carousel-arrow.prev {
-                left: 0;
-            }
+            .carousel-arrow.prev { left: 0; }
+            .carousel-arrow.next { right: 0; }
 
-            .carousel-arrow.next {
-                right: 0;
-            }
-
-            .carousel-dots {
-                margin-top: 1rem;
-            }
+            .carousel-dots { margin-top: 1rem; }
 
             .form-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
 
-            .form-container {
-                padding: 1.5rem;
-            }
+            .form-container { padding: 1.5rem; }
 
-            .thumbnail-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                max-width: 400px;
-            }
+            /* Thumbnails: Switch to carousel on mobile */
+            .thumbnail-grid { display: none; }
 
-            .thumbnail-card {
-                aspect-ratio: 16/9;
-            }
+            .thumbnail-carousel-wrapper { display: block; }
 
             .thumbnails-tabs {
                 justify-content: center;
+                margin-bottom: 1rem;
             }
 
             .tab-btn {
@@ -1538,96 +1663,38 @@
                 padding: 0.75rem 1.25rem;
             }
 
-            .software-containment {
-                padding: 1.25rem;
-            }
+            .software-containment { padding: 1.25rem; }
 
-            .cv-content h2 {
-                font-size: 1.4rem;
-            }
+            .cv-content h2 { font-size: 1.4rem; }
 
-            .cv-card {
-                padding: 1.5rem;
-            }
+            .cv-card { padding: 1.5rem; }
 
-            /* Ultra compact pricing for mobile */
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-                gap: 1rem;
-            }
+            /* Pricing: Switch to carousel on mobile */
+            .pricing-grid { display: none; }
 
-            .pricing-card {
-                padding: 1.25rem;
-            }
+            .pricing-carousel-wrapper { display: block; }
 
-            .price {
-                font-size: 1.75rem;
-            }
+            .section-header { margin-bottom: 1.5rem; }
 
-            .pricing-card ul {
-                margin: 1rem 0;
-            }
+            h2 { font-size: 1.4rem; }
 
-            .pricing-card li {
-                padding: 0.4rem 0;
-                font-size: 0.8rem;
-                padding-left: 1rem;
-            }
-
-            .best-for {
-                font-size: 0.75rem;
-                margin-top: 0.75rem;
-                padding-top: 0.75rem;
-            }
-
-            .thumbnail-case-study {
-                font-size: 0.75rem;
-            }
-
-            .view-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.65rem;
-            }
-
-            .section-header {
-                margin-bottom: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            .creator-content h3,
-            .about-content h3 {
-                font-size: 1.3rem;
-            }
+            .creator-content h3, .about-content h3 { font-size: 1.3rem; }
         }
 
         @media (max-width: 480px) {
-            .pricing-card {
-                padding: 1rem;
-            }
+            .pricing-carousel-slide { padding: 1.25rem; }
 
-            .price {
-                font-size: 1.5rem;
-            }
+            .price { font-size: 1.5rem; }
 
-            .tier-label {
-                font-size: 0.65rem;
-            }
+            .tier-label { font-size: 0.65rem; }
 
-            .pricing-card li {
-                font-size: 0.75rem;
-            }
+            .pricing-card li { font-size: 0.75rem; }
 
-            .meme-grid {
-                gap: 0.75rem;
-            }
+            .meme-grid { gap: 0.75rem; }
 
-            .meme-card {
-                padding: 1rem;
-            }
+            .meme-card { padding: 1rem; }
+
+            .thumbnail-carousel-slide { min-width: 90%; }
         }
     </style>
 </head>
@@ -1661,7 +1728,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section - Bigger & Bolder -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -1770,7 +1837,7 @@
         </div>
     </section>
 
-    <!-- Video Content Creator Section -->
+    <!-- Creator Section -->
     <section id="creator" class="creator-photo-section">
         <div class="creator-container">
             <div class="creator-photo">
@@ -1809,7 +1876,7 @@
         </div>
     </section>
 
-    <!-- Thumbnails Section - Always Visible Buttons -->
+    <!-- Thumbnails Section - Desktop Grid / Mobile Carousel -->
     <section id="thumbnails" class="thumbnails">
         <div class="thumbnails-header">
             <div class="section-header" style="margin-bottom: 0;">
@@ -1823,10 +1890,12 @@
                 <button class="tab-btn" onclick="filterThumbnails('portrait', this)">Portrait</button>
             </div>
         </div>
+
+        <!-- Desktop Grid -->
         <div class="thumbnail-grid" id="thumbnailGrid">
-            <article class="thumbnail-card" data-category="viral" onclick="openCaseStudy('travel-series')">
+            <article class="thumbnail-card" data-category="viral">
                 <img src="images/thumbnail1.jpg" alt="Travel Series Thumbnail">
-                <button class="view-btn">View Case Study</button>
+                <div class="view-btn">View Case Study</div>
                 <div class="thumbnail-overlay">
                     <div class="thumbnail-content">
                         <div class="thumbnail-meta">
@@ -1843,9 +1912,9 @@
                 </div>
             </article>
             
-            <article class="thumbnail-card" data-category="portrait" onclick="openCaseStudy('fitness-brand')">
+            <article class="thumbnail-card" data-category="portrait">
                 <img src="images/thumbnail2.jpg" alt="Fitness Brand Thumbnail">
-                <button class="view-btn">View Case Study</button>
+                <div class="view-btn">View Case Study</div>
                 <div class="thumbnail-overlay">
                     <div class="thumbnail-content">
                         <div class="thumbnail-meta">
@@ -1862,9 +1931,9 @@
                 </div>
             </article>
             
-            <article class="thumbnail-card" data-category="minimal" onclick="openCaseStudy('tech-reviews')">
+            <article class="thumbnail-card" data-category="minimal">
                 <img src="images/thumbnail3.jpg" alt="Tech Reviews Thumbnail">
-                <button class="view-btn">View Case Study</button>
+                <div class="view-btn">View Case Study</div>
                 <div class="thumbnail-overlay">
                     <div class="thumbnail-content">
                         <div class="thumbnail-meta">
@@ -1881,9 +1950,9 @@
                 </div>
             </article>
             
-            <article class="thumbnail-card" data-category="viral" onclick="openCaseStudy('comedy-channel')">
+            <article class="thumbnail-card" data-category="viral">
                 <img src="images/thumbnail1.jpg" alt="Comedy Channel Thumbnail">
-                <button class="view-btn">View Case Study</button>
+                <div class="view-btn">View Case Study</div>
                 <div class="thumbnail-overlay">
                     <div class="thumbnail-content">
                         <div class="thumbnail-meta">
@@ -1900,57 +1969,223 @@
                 </div>
             </article>
         </div>
+
+        <!-- Mobile Carousel -->
+        <div class="thumbnail-carousel-wrapper">
+            <div class="thumbnail-carousel-container">
+                <div class="thumbnail-carousel-track" id="thumbnailCarouselTrack">
+                    <div class="thumbnail-carousel-slide active">
+                        <div class="thumbnail-card" data-category="viral">
+                            <img src="images/thumbnail1.jpg" alt="Travel Series Thumbnail">
+                            <div class="thumbnail-overlay">
+                                <div class="thumbnail-content">
+                                    <div class="thumbnail-meta">
+                                        <span>Viral Series</span>
+                                        <span>•</span>
+                                        <span>2.4M Views</span>
+                                    </div>
+                                    <h3>Travel Series Revolution</h3>
+                                    <div class="thumbnail-case-study">
+                                        <span class="case-study-highlight">The Challenge</span>
+                                        Client's travel content was underperforming with 2% CTR. Developed a consistent orange/teal color grading system with bold typography that increased CTR to 8.5%.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-carousel-slide">
+                        <div class="thumbnail-card" data-category="portrait">
+                            <img src="images/thumbnail2.jpg" alt="Fitness Brand Thumbnail">
+                            <div class="thumbnail-overlay">
+                                <div class="thumbnail-content">
+                                    <div class="thumbnail-meta">
+                                        <span>Portrait Focus</span>
+                                        <span>•</span>
+                                        <span>340% Increase</span>
+                                    </div>
+                                    <h3>Fitness Brand Launch</h3>
+                                    <div class="thumbnail-case-study">
+                                        <span class="case-study-highlight">The Solution</span>
+                                        Implemented face-forward emotional triggers with high-contrast lighting. A/B tested 4 variations to find optimal expression intensity.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-carousel-slide">
+                        <div class="thumbnail-card" data-category="minimal">
+                            <img src="images/thumbnail3.jpg" alt="Tech Reviews Thumbnail">
+                            <div class="thumbnail-overlay">
+                                <div class="thumbnail-content">
+                                    <div class="thumbnail-meta">
+                                        <span>Minimal Design</span>
+                                        <span>•</span>
+                                        <span>Clean Aesthetic</span>
+                                    </div>
+                                    <h3>Tech Review Minimalism</h3>
+                                    <div class="thumbnail-case-study">
+                                        <span class="case-study-highlight">The Approach</span>
+                                        Stripped away clutter to focus on product-centric composition. Used negative space strategically to draw eye to key features.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-carousel-slide">
+                        <div class="thumbnail-card" data-category="viral">
+                            <img src="images/thumbnail1.jpg" alt="Comedy Channel Thumbnail">
+                            <div class="thumbnail-overlay">
+                                <div class="thumbnail-content">
+                                    <div class="thumbnail-meta">
+                                        <span>Viral Strategy</span>
+                                        <span>•</span>
+                                        <span>1.2M Subscribers</span>
+                                    </div>
+                                    <h3>Comedy Channel Growth</h3>
+                                    <div class="thumbnail-case-study">
+                                        <span class="case-study-highlight">The Result</span>
+                                        Created "reaction + context" formula combining expressive faces with mystery text. Systematized production for daily uploads.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail-carousel-dots">
+                <span class="thumbnail-dot active" onclick="goToThumbnailSlide(0)"></span>
+                <span class="thumbnail-dot" onclick="goToThumbnailSlide(1)"></span>
+                <span class="thumbnail-dot" onclick="goToThumbnailSlide(2)"></span>
+                <span class="thumbnail-dot" onclick="goToThumbnailSlide(3)"></span>
+            </div>
+        </div>
     </section>
 
-    <!-- Pricing Section - Ultra Compact -->
+    <!-- Pricing Section - Tier Based Desktop / Carousel Mobile -->
     <section id="pricing" class="pricing">
         <div class="section-header">
             <h2>Video Production Packages</h2>
             <p class="section-subtitle">Flexible Plans for Every Creator</p>
         </div>
+
+        <!-- Desktop Tier Layout -->
         <div class="pricing-grid">
             <article class="pricing-card">
-                <div class="tier-label">Tier 1 — Project-Based</div>
+                <div class="tier-label">Tier 1 — Starter</div>
                 <div class="price">$500 <span>per video</span></div>
+                <span class="feature-count">5 Features</span>
                 <ul>
                     <li>Up to 15-minute finished video</li>
                     <li>Full editing and visual refinement</li>
                     <li>Up to 12 hours production time</li>
                     <li>2 revision rounds</li>
-                    <li>SEO optimization included</li>
+                    <li>Basic SEO optimization</li>
                 </ul>
                 <div class="best-for">Best for one-off or trial projects.</div>
             </article>
 
             <article class="pricing-card featured">
-                <div class="tier-label">Tier 2 — Monthly Retainer</div>
+                <div class="tier-label">Tier 2 — Professional</div>
                 <div class="price">$1,800 <span>per month</span></div>
+                <span class="feature-count">8 Features</span>
                 <ul>
                     <li>Up to 45 hours production time</li>
                     <li>3-4 videos per month</li>
                     <li>Priority scheduling</li>
                     <li>Thumbnail design included</li>
                     <li>Monthly analytics report</li>
+                    <li>Advanced SEO strategy</li>
+                    <li>Direct communication channel</li>
+                    <li>Rush delivery available</li>
                 </ul>
                 <div class="best-for">Best for consistent content production.</div>
             </article>
 
             <article class="pricing-card">
-                <div class="tier-label">Tier 3 — Premium Partner</div>
+                <div class="tier-label">Tier 3 — Enterprise</div>
                 <div class="price">$3,000 <span>per month</span></div>
+                <span class="feature-count">10 Features</span>
                 <ul>
                     <li>Up to 80 hours production time</li>
                     <li>6-8 videos per month</li>
                     <li>Unlimited minor revisions</li>
                     <li>Advanced SEO strategy</li>
                     <li>Custom thumbnail package</li>
+                    <li>Dedicated project manager</li>
+                    <li>Brand guideline development</li>
+                    <li>Quarterly strategy sessions</li>
+                    <li>Priority support 24/7</li>
+                    <li>White-label deliverables</li>
                 </ul>
                 <div class="best-for">Best for high-volume partnerships.</div>
             </article>
         </div>
+
+        <!-- Mobile Carousel -->
+        <div class="pricing-carousel-wrapper">
+            <div class="pricing-carousel-container">
+                <div class="pricing-carousel-track" id="pricingCarouselTrack">
+                    <div class="pricing-carousel-slide">
+                        <span class="mobile-tier-badge free">Starter</span>
+                        <div class="pricing-card">
+                            <div class="tier-label">Tier 1 — Project-Based</div>
+                            <div class="price">$500 <span>per video</span></div>
+                            <ul>
+                                <li>Up to 15-minute finished video</li>
+                                <li>Full editing and visual refinement</li>
+                                <li>Up to 12 hours production time</li>
+                                <li>2 revision rounds</li>
+                                <li>SEO optimization included</li>
+                            </ul>
+                            <div class="best-for">Best for one-off or trial projects.</div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-carousel-slide active">
+                        <span class="mobile-tier-badge premium">Most Popular</span>
+                        <div class="pricing-card featured">
+                            <div class="tier-label">Tier 2 — Monthly Retainer</div>
+                            <div class="price">$1,800 <span>per month</span></div>
+                            <ul>
+                                <li>Up to 45 hours production time</li>
+                                <li>3-4 videos per month</li>
+                                <li>Priority scheduling</li>
+                                <li>Thumbnail design included</li>
+                                <li>Monthly analytics report</li>
+                            </ul>
+                            <div class="best-for">Best for consistent content production.</div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-carousel-slide">
+                        <span class="mobile-tier-badge ultimate">Ultimate</span>
+                        <div class="pricing-card">
+                            <div class="tier-label">Tier 3 — Premium Partner</div>
+                            <div class="price">$3,000 <span>per month</span></div>
+                            <ul>
+                                <li>Up to 80 hours production time</li>
+                                <li>6-8 videos per month</li>
+                                <li>Unlimited minor revisions</li>
+                                <li>Advanced SEO strategy</li>
+                                <li>Custom thumbnail package</li>
+                            </ul>
+                            <div class="best-for">Best for high-volume partnerships.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-carousel-dots">
+                <span class="pricing-dot" onclick="goToPricingSlide(0)"></span>
+                <span class="pricing-dot active" onclick="goToPricingSlide(1)"></span>
+                <span class="pricing-dot" onclick="goToPricingSlide(2)"></span>
+            </div>
+        </div>
     </section>
 
-    <!-- About The Editor Section -->
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="section-header" style="max-width: 1200px; margin: 0 auto 2rem;">
             <h2>About The Editor</h2>
@@ -2160,6 +2395,7 @@
     </footer>
 
     <script>
+        // Featured Edits Carousel
         let currentSlide = 2;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
@@ -2201,11 +2437,66 @@
             }
         }
 
+        // Thumbnail Carousel (Mobile)
+        let currentThumbnailSlide = 0;
+        const thumbnailSlides = document.querySelectorAll('.thumbnail-carousel-slide');
+        const thumbnailDots = document.querySelectorAll('.thumbnail-dot');
+        const thumbnailTrack = document.getElementById('thumbnailCarouselTrack');
+        const totalThumbnailSlides = thumbnailSlides.length;
+
+        function updateThumbnailCarousel() {
+            thumbnailSlides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                thumbnailDots[index].classList.remove('active');
+            });
+            
+            thumbnailSlides[currentThumbnailSlide].classList.add('active');
+            thumbnailDots[currentThumbnailSlide].classList.add('active');
+            
+            const offset = -(currentThumbnailSlide * (thumbnailSlides[0].offsetWidth + 16));
+            thumbnailTrack.style.transform = `translateX(${offset}px)`;
+        }
+
+        function goToThumbnailSlide(index) {
+            if (index >= 0 && index < totalThumbnailSlides) {
+                currentThumbnailSlide = index;
+                updateThumbnailCarousel();
+            }
+        }
+
+        // Pricing Carousel (Mobile)
+        let currentPricingSlide = 1; // Start with middle (Premium) active
+        const pricingSlides = document.querySelectorAll('.pricing-carousel-slide');
+        const pricingDots = document.querySelectorAll('.pricing-dot');
+        const pricingTrack = document.getElementById('pricingCarouselTrack');
+        const totalPricingSlides = pricingSlides.length;
+
+        function updatePricingCarousel() {
+            pricingSlides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                pricingDots[index].classList.remove('active');
+            });
+            
+            pricingSlides[currentPricingSlide].classList.add('active');
+            pricingDots[currentPricingSlide].classList.add('active');
+            
+            const offset = -(currentPricingSlide * 100);
+            pricingTrack.style.transform = `translateX(${offset}%)`;
+        }
+
+        function goToPricingSlide(index) {
+            if (index >= 0 && index < totalPricingSlides) {
+                currentPricingSlide = index;
+                updatePricingCarousel();
+            }
+        }
+
+        // Thumbnail Filter (Desktop)
         function filterThumbnails(category, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            const cards = document.querySelectorAll('.thumbnail-card');
+            const cards = document.querySelectorAll('.thumbnail-grid .thumbnail-card');
             cards.forEach(card => {
                 if (category === 'all' || card.dataset.category === category) {
                     card.style.display = 'block';
@@ -2223,21 +2514,21 @@
             });
         }
 
-        function openCaseStudy(studyId) {
-            console.log('Opening case study:', studyId);
-            const card = event.currentTarget;
-            card.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                card.style.transform = '';
-            }, 150);
-        }
-
+        // Initialize
         window.addEventListener('load', () => {
-            setTimeout(updateCarousel, 100);
+            setTimeout(() => {
+                updateCarousel();
+                updateThumbnailCarousel();
+                updatePricingCarousel();
+            }, 100);
         });
         
-        window.addEventListener('resize', updateCarousel);
+        window.addEventListener('resize', () => {
+            updateCarousel();
+            updateThumbnailCarousel();
+        });
 
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -2248,14 +2539,54 @@
             });
         });
 
+        // Prevent double-tap zoom
         document.addEventListener('dblclick', function(event) {
             event.preventDefault();
         }, { passive: false });
 
+        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') moveCarousel(-1);
             if (e.key === 'ArrowRight') moveCarousel(1);
         });
+
+        // Touch swipe for mobile carousels
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const thumbnailCarousel = document.querySelector('.thumbnail-carousel-container');
+        if (thumbnailCarousel) {
+            thumbnailCarousel.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            thumbnailCarousel.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) {
+                    goToThumbnailSlide(Math.min(currentThumbnailSlide + 1, totalThumbnailSlides - 1));
+                }
+                if (touchEndX - touchStartX > 50) {
+                    goToThumbnailSlide(Math.max(currentThumbnailSlide - 1, 0));
+                }
+            });
+        }
+
+        const pricingCarousel = document.querySelector('.pricing-carousel-container');
+        if (pricingCarousel) {
+            pricingCarousel.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            pricingCarousel.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) {
+                    goToPricingSlide(Math.min(currentPricingSlide + 1, totalPricingSlides - 1));
+                }
+                if (touchEndX - touchStartX > 50) {
+                    goToPricingSlide(Math.max(currentPricingSlide - 1, 0));
+                }
+            });
+        }
     </script>
 
 </body>
