@@ -1371,29 +1371,6 @@
                 padding: 3rem 5%;
             }
 
-            .carousel-slide {
-                min-width: 75%;
-            }
-            
-            /* Show side arrows on tablet/mobile */
-            .carousel-arrow {
-                display: flex;
-                width: 40px;
-                height: 60px;
-            }
-
-            .carousel-arrow.prev {
-                left: 0.5rem;
-            }
-
-            .carousel-arrow.next {
-                right: 0.5rem;
-            }
-
-            .carousel-container {
-                padding: 0 3rem;
-            }
-
             /* Hide bottom arrows on mobile/tablet */
             .carousel-controls {
                 display: none;
@@ -1493,26 +1470,6 @@
                 max-width: 100%;
             }
 
-            .carousel-slide {
-                min-width: 85%;
-            }
-
-            .carousel-container {
-                padding: 0 2.5rem;
-            }
-
-            .carousel-arrow {
-                width: 36px;
-                height: 50px;
-            }
-
-            .carousel-arrow.prev {
-                left: 0;
-            }
-
-            .carousel-arrow.next {
-                right: 0;
-            }
 
             .carousel-dots {
                 margin-top: 1rem;
@@ -1651,6 +1608,33 @@
 
             .meme-card {
                 padding: 1rem;
+            }
+        }
+                @media (max-width: 968px) {
+            .carousel-slide {
+                min-width: 85%;
+                max-width: 600px;
+            }
+            .carousel-slide.active {
+                transform: scale(1.15);
+            }
+            .carousel-container {
+                padding: 0 2rem;
+            }
+            .carousel-track {
+                padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide {
+                min-width: 90%;
+            }
+            .carousel-slide.active {
+                transform: scale(1.2);
+            }
+            .carousel-container {
+                padding: 0 1rem;
             }
         }
     </style>
