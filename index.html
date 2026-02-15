@@ -664,33 +664,32 @@
             opacity: 0.4; /* Darker when description shows */
         }
 
-/* THUMBNAIL BUTTON - DARK TRANSPARENT WITH SHADING */
+/* THUMBNAIL BUTTON - SOLID BLUE CENTERED */
 .view-btn {
     position: absolute;
-    bottom: 1rem;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    padding: 0.6rem 1.25rem;
-    background: rgba(44, 90, 160, 0.3); /* Dark transparent blue */
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.7rem;
+    transform: translate(-50%, -50%);
+    padding: 0.75rem 1.5rem;
+    background: var(--accent); /* Solid blue */
+    color: white;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    border: 1px solid rgba(44, 90, 160, 0.5);
+    border: 2px solid var(--accent);
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 5;
     opacity: 1;
     white-space: nowrap;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .thumbnail-card:hover .view-btn {
     opacity: 0;
-    transform: translateX(-50%) translateY(10px);
+    transform: translate(-50%, -50%) translateY(10px);
 }
 
 
@@ -1567,8 +1566,8 @@
             }
 
             .view-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.65rem;
+                padding: 0.6rem 1.25rem;
+                font-size: 0.7rem;
             }
 
             .section-header {
@@ -1690,13 +1689,13 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#inquiry">Contact</a></li>
                 <li class="social-nav">
-                    <a href="https://www.linkedin.com/in/seantyndale/" target="_blank" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/seantyndale/ " target="_blank" title="LinkedIn">
                         <img src="icons/LinkedIn.png" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/seansqlifting29" target="_blank" title="GitHub">
+                    <a href="https://github.com/seansqlifting29 " target="_blank" title="GitHub">
                         <img src="icons/GitHub.png" alt="GitHub">
                     </a>
-                    <a href="https://www.instagram.com/sean_da_rager/" target="_blank" title="Instagram">
+                    <a href="https://www.instagram.com/sean_da_rager/ " target="_blank" title="Instagram">
                         <img src="instagram-icon.png" alt="Instagram">
                     </a>
                 </li>
@@ -1733,7 +1732,7 @@
         
         <div class="carousel-wrapper">
             <button class="carousel-arrow prev" onclick="moveCarousel(-1)" aria-label="Previous slide">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
@@ -1742,7 +1741,7 @@
                 <div class="carousel-track" id="carouselTrack">
                     <article class="carousel-slide">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/SjwdFnnYlNs" title="Travel Documentary" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/SjwdFnnYlNs " title="Travel Documentary" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>Travel Documentary</h3>
@@ -1752,7 +1751,7 @@
 
                     <article class="carousel-slide">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/CUM3jLGL6nk" title="Malaysia Feature" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/CUM3jLGL6nk " title="Malaysia Feature" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>Malaysia Feature</h3>
@@ -1762,7 +1761,7 @@
 
                     <article class="carousel-slide active">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/uH6q77pwHO0" title="International Feature" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/uH6q77pwHO0 " title="International Feature" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>International Feature</h3>
@@ -1772,7 +1771,7 @@
 
                     <article class="carousel-slide">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/CFkd18OEGv4" title="Brand Campaign" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/CFkd18OEGv4 " title="Brand Campaign" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>Brand Campaign</h3>
@@ -1782,7 +1781,7 @@
 
                     <article class="carousel-slide">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/uH6q77pwHO0" title="French Channel" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/uH6q77pwHO0 " title="French Channel" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>French Channel</h3>
@@ -1806,7 +1805,7 @@
             </div>
             
             <button class="carousel-arrow next" onclick="moveCarousel(1)" aria-label="Next slide">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
             </button>
@@ -2132,19 +2131,19 @@
                 
                 <div class="cv-benefits">
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Detailed project case studies</span>
                     </div>
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Technical skills & certifications</span>
                     </div>
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Client references available</span>
@@ -2154,14 +2153,14 @@
             
             <div class="cv-card">
                 <div class="cv-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                 </div>
                 <h3>Resume PDF</h3>
                 <p>Updated January 2025 • 2 pages</p>
                 <a href="pdf/Sean_Tyndale_CV.pdf" download class="cv-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                     Download
@@ -2176,7 +2175,7 @@
             <p class="contact-label">Let's Work Together</p>
             <div class="contact-email-wrapper">
                 <a href="mailto:styndale3gatech@gmail.com" class="contact-email">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     styndale3gatech@gmail.com
@@ -2184,13 +2183,13 @@
             </div>
             
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/seantyndale/" target="_blank" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/seantyndale/ " target="_blank" title="LinkedIn">
                     <img src="icons/LinkedIn.png" alt="LinkedIn">
                 </a>
-                <a href="https://github.com/seansqlifting29" target="_blank" title="GitHub">
+                <a href="https://github.com/seansqlifting29 " target="_blank" title="GitHub">
                     <img src="icons/GitHub.png" alt="GitHub">
                 </a>
-                <a href="https://www.instagram.com/sean_da_rager/" target="_blank" title="Instagram">
+                <a href="https://www.instagram.com/sean_da_rager/ " target="_blank" title="Instagram">
                     <img src="icons/Instagram.png" alt="Instagram">
                 </a>
             </div>
