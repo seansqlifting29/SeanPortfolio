@@ -1071,7 +1071,7 @@
             line-height: 1.5;
         }
 
-        /* Inquiry Form Section */
+        /* Inquiry Form Section - Formspree */
         .inquiry {
             background: var(--black);
             padding: 4rem 5%;
@@ -1102,7 +1102,7 @@
             grid-column: 1 / -1;
         }
 
-        label {
+        .form-group label {
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 1px;
@@ -1111,25 +1111,43 @@
             margin-bottom: 0.4rem;
         }
 
-        input, select, textarea {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             background: var(--black);
             border: 1px solid var(--border);
             color: var(--text-primary);
             padding: 0.875rem;
             font-family: inherit;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
             border-radius: 4px;
+            transition: all 0.3s ease;
+            width: 100%;
         }
 
-        input:focus, select:focus, textarea:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.2);
         }
 
-        textarea {
-            resize: vertical;
-            min-height: 100px;
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        /* Custom select arrow */
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236c757d'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+            padding-right: 2.5rem;
+            cursor: pointer;
         }
 
         .submit-btn {
@@ -1145,13 +1163,40 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border-radius: 4px;
-            margin-top: 0.25rem;
-            touch-action: manipulation;
+            position: relative;
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover:not(:disabled) {
             background: transparent;
             color: var(--accent);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Form status messages */
+        .form-status {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: var(--skill-green);
+            border: 1px solid var(--tier-green);
+            color: var(--text-primary);
+        }
+
+        .form-status.error {
+            display: block;
+            background: #5a1e1e;
+            border: 1px solid #e74c3c;
+            color: #f5f5f5;
         }
 
         /* CV Download Section - Professional Compact Design */
@@ -1530,13 +1575,14 @@
                 margin-top: 1rem;
             }
 
+            .form-container {
+                padding: 1.5rem;
+                margin: 0 1rem;
+            }
+
             .form-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-            }
-
-            .form-container {
-                padding: 1.5rem;
             }
 
             .thumbnail-grid {
@@ -1776,13 +1822,13 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#inquiry">Contact</a></li>
                 <li class="social-nav">
-                    <a href="https://www.linkedin.com/in/seantyndale/  " target="_blank" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/seantyndale/    " target="_blank" title="LinkedIn">
                         <img src="icons/LinkedIn.png" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/seansqlifting29  " target="_blank" title="GitHub">
+                    <a href="https://github.com/seansqlifting29    " target="_blank" title="GitHub">
                         <img src="icons/GitHub.png" alt="GitHub">
                     </a>
-                    <a href="https://www.instagram.com/sean_da_rager/  " target="_blank" title="Instagram">
+                    <a href="https://www.instagram.com/sean_da_rager/    " target="_blank" title="Instagram">
                         <img src="icons/Instagram.png" alt="Instagram">
                     </a>
                 </li>
@@ -1819,7 +1865,7 @@
         
         <div class="carousel-wrapper">
             <button class="carousel-arrow prev" onclick="moveCarousel(-1)" aria-label="Previous slide">
-                <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
@@ -1829,7 +1875,7 @@
 
                     <article class="carousel-slide">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/CUM3jLGL6nk  " title="Malaysia Vlogging Feature" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/CUM3jLGL6nk    " title="Malaysia Vlogging Feature" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>Malaysia Vlogging Feature</h3>
@@ -1839,7 +1885,7 @@
                     
                     <article class="carousel-slide active">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/uH6q77pwHO0" 
+                            <iframe src="https://www.youtube.com/embed/uH6q77pwHO0  " 
                             title="Le Casque et la Robe Podcast Feature" 
                             allowfullscreen></iframe>
                         </div>
@@ -1852,7 +1898,7 @@
 
                     <article class="carousel-slide active">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/kdBy51bf0n4?si=V0bxVeNhttCmDlvv " title="History of Body Hair and Waxing in Art | ARTORIA TV" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/kdBy51bf0n4?si=V0bxVeNhttCmDlvv   " title="History of Body Hair and Waxing in Art | ARTORIA TV" allowfullscreen></iframe>
                         </div>
                     
                         <div class="video-info">
@@ -1870,7 +1916,7 @@
 
                                         <article class="carousel-slide active">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/IbDoFYOSWyA?si=hQNNU2l4Cu4LpiiV" 
+                            <iframe src="https://www.youtube.com/embed/IbDoFYOSWyA?si=hQNNU2l4Cu4LpiiV  " 
                             title="Trees in Art Documentary Feature" 
                             allowfullscreen></iframe>
                         </div>
@@ -1883,7 +1929,7 @@
                     
                     <article class="carousel-slide">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/BklkrMqVvRo?si=hG4k3TNgwP1fFJ5z  " title="Reaction & Commentary" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/BklkrMqVvRo?si=hG4k3TNgwP1fFJ5z    " title="Reaction & Commentary" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>Reaction & Commentary</h3>
@@ -1907,7 +1953,7 @@
             </div>
             
             <button class="carousel-arrow next" onclick="moveCarousel(1)" aria-label="Next slide">
-                <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
             </button>
@@ -2148,7 +2194,7 @@
         </div>
     </section>
 
-    <!-- Inquiry Form Section -->
+    <!-- Inquiry Form Section - Formspree -->
     <section id="inquiry" class="inquiry">
         <div class="section-header">
             <h2>Project Inquiry</h2>
@@ -2156,21 +2202,21 @@
         </div>
         
         <div class="form-container">
-            <form action="mailto:styndale3gatech@gmail.com" method="post" enctype="text/plain">
+            <form id="inquiryForm" action="https://formspree.io/f/xjgerbnn" method="POST">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="company">Company/Channel</label>
-                        <input type="text" id="company" name="company">
+                        <input type="text" id="company" name="company" placeholder="Your Brand">
                     </div>
                     
                     <div class="form-group">
@@ -2199,24 +2245,20 @@
                     </div>
                     
                     <div class="form-group full-width">
-                        <label for="timeline">Timeline</label>
-                        <select id="timeline" name="timeline" required>
-                            <option value="">Select timeline</option>
-                            <option value="asap">ASAP</option>
-                            <option value="1-week">1 week</option>
-                            <option value="2-weeks">2 weeks</option>
-                            <option value="1-month">1 month</option>
-                            <option value="flexible">Flexible</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
                         <label for="message">Project Details</label>
-                        <textarea id="message" name="message" placeholder="Describe your project..." required></textarea>
+                        <textarea id="message" name="message" placeholder="Describe your project..." rows="5" required></textarea>
                     </div>
                 </div>
                 
-                <button type="submit" class="submit-btn">Send Inquiry</button>
+                <!-- Honeypot field to prevent spam -->
+                <input type="text" name="_gotcha" style="display:none">
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Send Inquiry</span>
+                    <span class="btn-loading" style="display:none;">Sending...</span>
+                </button>
+                
+                <div id="formStatus" class="form-status"></div>
             </form>
         </div>
     </section>
@@ -2230,19 +2272,19 @@
                 
                 <div class="cv-benefits">
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Detailed project case studies</span>
                     </div>
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Technical skills & certifications</span>
                     </div>
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Client references available</span>
@@ -2252,14 +2294,14 @@
             
             <div class="cv-card">
                 <div class="cv-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                 </div>
                 <h3>Resume PDF</h3>
                 <p>Updated January 2025 • 2 pages</p>
                 <a href="pdf/Sean_Tyndale_CV.pdf" download class="cv-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                     Download
@@ -2275,7 +2317,7 @@
             
             <div class="contact-email-wrapper">
                 <a href="mailto:styndale3gatech@gmail.com" class="contact-email">
-                    <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg   " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     styndale3gatech@gmail.com
@@ -2283,13 +2325,13 @@
             </div>
             
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/seantyndale/ " target="_blank" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/seantyndale/   " target="_blank" title="LinkedIn">
                     <img src="icons/LinkedIn.png" alt="LinkedIn">
                 </a>
-                <a href="https://github.com/seansqlifting29 " target="_blank" title="GitHub">
+                <a href="https://github.com/seansqlifting29   " target="_blank" title="GitHub">
                     <img src="icons/GitHub.png" alt="GitHub">
                 </a>
-                <a href="https://www.instagram.com/sean_da_rager/ " target="_blank" title="Instagram">
+                <a href="https://www.instagram.com/sean_da_rager/   " target="_blank" title="Instagram">
                     <img src="icons/Instagram.png" alt="Instagram">
                 </a>
             </div>
@@ -2398,6 +2440,52 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') moveCarousel(-1);
             if (e.key === 'ArrowRight') moveCarousel(1);
+        });
+
+        // Formspree form submission handler
+        document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const statusDiv = document.getElementById('formStatus');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            statusDiv.style.display = 'none';
+            statusDiv.className = 'form-status';
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success
+                    form.reset();
+                    statusDiv.textContent = 'Thanks! Your inquiry has been sent. I\'ll get back to you within 24 hours.';
+                    statusDiv.classList.add('success');
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (error) {
+                // Error
+                statusDiv.textContent = 'Oops! Something went wrong. Please email me directly at styndale3gatech@gmail.com';
+                statusDiv.classList.add('error');
+            } finally {
+                // Reset button
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            }
         });
     </script>
 
