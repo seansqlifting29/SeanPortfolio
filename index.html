@@ -1071,7 +1071,7 @@
             line-height: 1.5;
         }
 
-        /* Inquiry Form Section */
+        /* Inquiry Form Section - Form.io Container */
         .inquiry {
             background: var(--black);
             padding: 4rem 5%;
@@ -1086,58 +1086,52 @@
             border: 1px solid var(--border);
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
+        /* Form.io specific styling overrides */
+        .formio-form {
+            background: transparent !important;
+        }
+
+        .formio-component {
             margin-bottom: 1.25rem;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        label {
+        .formio-component label {
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--text-muted);
             margin-bottom: 0.4rem;
+            display: block;
         }
 
-        input, select, textarea {
-            background: var(--black);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 0.875rem;
-            font-family: inherit;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border-radius: 4px;
+        .formio-component input,
+        .formio-component select,
+        .formio-component textarea {
+            background: var(--black) !important;
+            border: 1px solid var(--border) !important;
+            color: var(--text-primary) !important;
+            padding: 0.875rem !important;
+            font-family: inherit !important;
+            font-size: 0.9rem !important;
+            border-radius: 4px !important;
+            width: 100%;
         }
 
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent);
+        .formio-component input:focus,
+        .formio-component select:focus,
+        .formio-component textarea:focus {
+            outline: none !important;
+            border-color: var(--accent) !important;
         }
 
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .submit-btn {
+        .formio-component button[type="submit"],
+        .btn-primary {
             width: 100%;
             padding: 1rem;
-            background: var(--accent);
-            border: 2px solid var(--accent);
-            color: white;
+            background: var(--accent) !important;
+            border: 2px solid var(--accent) !important;
+            color: white !important;
             font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 2px;
@@ -1149,9 +1143,10 @@
             touch-action: manipulation;
         }
 
-        .submit-btn:hover {
-            background: transparent;
-            color: var(--accent);
+        .formio-component button[type="submit"]:hover,
+        .btn-primary:hover {
+            background: transparent !important;
+            color: var(--accent) !important;
         }
 
         /* CV Download Section - Professional Compact Design */
@@ -1530,11 +1525,6 @@
                 margin-top: 1rem;
             }
 
-            .form-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
             .form-container {
                 padding: 1.5rem;
             }
@@ -1776,13 +1766,13 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#inquiry">Contact</a></li>
                 <li class="social-nav">
-                    <a href="https://www.linkedin.com/in/seantyndale/  " target="_blank" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/seantyndale/    " target="_blank" title="LinkedIn">
                         <img src="icons/LinkedIn.png" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/seansqlifting29  " target="_blank" title="GitHub">
+                    <a href="https://github.com/seansqlifting29    " target="_blank" title="GitHub">
                         <img src="icons/GitHub.png" alt="GitHub">
                     </a>
-                    <a href="https://www.instagram.com/sean_da_rager/  " target="_blank" title="Instagram">
+                    <a href="https://www.instagram.com/sean_da_rager/    " target="_blank" title="Instagram">
                         <img src="icons/Instagram.png" alt="Instagram">
                     </a>
                 </li>
@@ -1819,7 +1809,7 @@
         
         <div class="carousel-wrapper">
             <button class="carousel-arrow prev" onclick="moveCarousel(-1)" aria-label="Previous slide">
-                <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
@@ -1829,7 +1819,7 @@
 
                     <article class="carousel-slide">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/CUM3jLGL6nk  " title="Malaysia Vlogging Feature" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/CUM3jLGL6nk    " title="Malaysia Vlogging Feature" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>Malaysia Vlogging Feature</h3>
@@ -1839,7 +1829,7 @@
                     
                     <article class="carousel-slide active">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/uH6q77pwHO0" 
+                            <iframe src="https://www.youtube.com/embed/uH6q77pwHO0  " 
                             title="Le Casque et la Robe Podcast Feature" 
                             allowfullscreen></iframe>
                         </div>
@@ -1852,7 +1842,7 @@
 
                     <article class="carousel-slide active">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/kdBy51bf0n4?si=V0bxVeNhttCmDlvv " title="History of Body Hair and Waxing in Art | ARTORIA TV" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/kdBy51bf0n4?si=V0bxVeNhttCmDlvv   " title="History of Body Hair and Waxing in Art | ARTORIA TV" allowfullscreen></iframe>
                         </div>
                     
                         <div class="video-info">
@@ -1870,7 +1860,7 @@
 
                                         <article class="carousel-slide active">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/IbDoFYOSWyA?si=hQNNU2l4Cu4LpiiV" 
+                            <iframe src="https://www.youtube.com/embed/IbDoFYOSWyA?si=hQNNU2l4Cu4LpiiV  " 
                             title="Trees in Art Documentary Feature" 
                             allowfullscreen></iframe>
                         </div>
@@ -1883,7 +1873,7 @@
                     
                     <article class="carousel-slide">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/BklkrMqVvRo?si=hG4k3TNgwP1fFJ5z  " title="Reaction & Commentary" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/BklkrMqVvRo?si=hG4k3TNgwP1fFJ5z    " title="Reaction & Commentary" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
                             <h3>Reaction & Commentary</h3>
@@ -1907,7 +1897,7 @@
             </div>
             
             <button class="carousel-arrow next" onclick="moveCarousel(1)" aria-label="Next slide">
-                <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
             </button>
@@ -2148,7 +2138,7 @@
         </div>
     </section>
 
-    <!-- Inquiry Form Section -->
+    <!-- Inquiry Form Section - Form.io Embed -->
     <section id="inquiry" class="inquiry">
         <div class="section-header">
             <h2>Project Inquiry</h2>
@@ -2156,68 +2146,7 @@
         </div>
         
         <div class="form-container">
-            <form action="mailto:styndale3gatech@gmail.com" method="post" enctype="text/plain">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company/Channel</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="budget">Budget Range</label>
-                        <select id="budget" name="budget" required>
-                            <option value="">Select range</option>
-                            <option value="500-1000">$500 - $1,000</option>
-                            <option value="1000-2000">$1,000 - $2,000</option>
-                            <option value="2000-5000">$2,000 - $5,000</option>
-                            <option value="5000+">$5,000+</option>
-                            <option value="retainer">Monthly Retainer</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="project-type">Project Type</label>
-                        <select id="project-type" name="project-type" required>
-                            <option value="">Select type</option>
-                            <option value="youtube-vlog">YouTube Vlog</option>
-                            <option value="documentary">Documentary</option>
-                            <option value="commercial">Commercial/Brand</option>
-                            <option value="social-media">Social Media</option>
-                            <option value="corporate">Corporate</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="timeline">Timeline</label>
-                        <select id="timeline" name="timeline" required>
-                            <option value="">Select timeline</option>
-                            <option value="asap">ASAP</option>
-                            <option value="1-week">1 week</option>
-                            <option value="2-weeks">2 weeks</option>
-                            <option value="1-month">1 month</option>
-                            <option value="flexible">Flexible</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="message">Project Details</label>
-                        <textarea id="message" name="message" placeholder="Describe your project..." required></textarea>
-                    </div>
-                </div>
-                
-                <button type="submit" class="submit-btn">Send Inquiry</button>
-            </form>
+            <script src="https://portal.form.io/manager/view/assets/lib/offline/formio.offline.min.js?base=https://api.form.io&project=https://lurcdqkzjydiyvg.form.io&src=https://lurcdqkzjydiyvg.form.io/seantyndaleportfolio&libs=true"></script>
         </div>
     </section>
 
@@ -2230,19 +2159,19 @@
                 
                 <div class="cv-benefits">
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Detailed project case studies</span>
                     </div>
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Technical skills & certifications</span>
                     </div>
                     <div class="cv-benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Client references available</span>
@@ -2252,14 +2181,14 @@
             
             <div class="cv-card">
                 <div class="cv-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                 </div>
                 <h3>Resume PDF</h3>
                 <p>Updated January 2025 • 2 pages</p>
                 <a href="pdf/Sean_Tyndale_CV.pdf" download class="cv-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg  " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg    " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                     Download
@@ -2275,7 +2204,7 @@
             
             <div class="contact-email-wrapper">
                 <a href="mailto:styndale3gatech@gmail.com" class="contact-email">
-                    <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg   " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     styndale3gatech@gmail.com
@@ -2283,13 +2212,13 @@
             </div>
             
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/seantyndale/ " target="_blank" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/seantyndale/   " target="_blank" title="LinkedIn">
                     <img src="icons/LinkedIn.png" alt="LinkedIn">
                 </a>
-                <a href="https://github.com/seansqlifting29 " target="_blank" title="GitHub">
+                <a href="https://github.com/seansqlifting29   " target="_blank" title="GitHub">
                     <img src="icons/GitHub.png" alt="GitHub">
                 </a>
-                <a href="https://www.instagram.com/sean_da_rager/ " target="_blank" title="Instagram">
+                <a href="https://www.instagram.com/sean_da_rager/   " target="_blank" title="Instagram">
                     <img src="icons/Instagram.png" alt="Instagram">
                 </a>
             </div>
