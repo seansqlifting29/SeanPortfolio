@@ -1,1 +1,128 @@
+/* Form.io Dark Theme - Sean Tyndale Portfolio */
+.formio-form {
+    background: #0a0a0a !important;
+    color: #f5f5f5 !important;
+}
 
+.formio-component {
+    margin-bottom: 1.25rem !important;
+}
+
+.formio-component label {
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    color: #6c757d !important;
+    margin-bottom: 0.4rem !important;
+    display: block !important;
+}
+
+.formio-component input,
+.formio-component select,
+.formio-component textarea {
+    background: #0a0a0a !important;
+    border: 1px solid #2a2a2a !important;
+    color: #f5f5f5 !important;
+    padding: 0.875rem !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+    font-size: 0.9rem !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+}
+
+.formio-component input:focus,
+.formio-component select:focus,
+.formio-component textarea:focus {
+    outline: none !important;
+    border-color: #2c5aa0 !important;
+    box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.2) !important;
+}
+
+.formio-component select {
+    appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236c757d'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 1rem !important;
+    padding-right: 2.5rem !important;
+}
+
+.formio-component button[type="submit"],
+.btn-primary,
+.formio-button {
+    width: 100% !important;
+    padding: 1rem !important;
+    background: #2c5aa0 !important;
+    border: 2px solid #2c5aa0 !important;
+    color: white !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border-radius: 4px !important;
+    margin-top: 0.25rem !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+}
+
+.formio-component button[type="submit"]:hover,
+.btn-primary:hover,
+.formio-button:hover {
+    background: transparent !important;
+    color: #2c5aa0 !important;
+}
+
+.formio-form-group,
+.formio-component-content,
+.formio-form-wrapper,
+.formio-formio-component {
+    background: transparent !important;
+}
+
+.formio-component input::placeholder,
+.formio-component textarea::placeholder {
+    color: #6c757d !important;
+    opacity: 0.6 !important;
+}
+
+.formio-errors .error {
+    color: #e74c3c !important;
+    font-size: 0.8rem !important;
+    margin-top: 0.25rem !important;
+}
+
+.has-error input,
+.has-error select,
+.has-error textarea {
+    border-color: #e74c3c !important;
+}
+
+.alert-success {
+    background: #1e4a3e !important;
+    border: 1px solid #2d5a3d !important;
+    color: #f5f5f5 !important;
+    border-radius: 4px !important;
+    padding: 1rem !important;
+}
+
+.formio-component .required {
+    color: #2c5aa0 !important;
+}
+
+.formio-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.25rem !important;
+}
+
+.formio-row .formio-component {
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .formio-row {
+        grid-template-columns: 1fr !important;
+    }
+}
