@@ -308,7 +308,6 @@
             <li><a href="#portfolio">Work</a></li>
             <li><a href="#results">Results</a></li>
             <li><a href="#sponsors">Sponsors</a></li>
-            <li><a href="#thumbnails">Thumbnails</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#inquiry">Contact</a></li>
@@ -325,7 +324,6 @@
 <div class="mobile-menu" id="mobileMenu">
     <a href="#portfolio" onclick="closeMobile()">Work</a>
     <a href="#results" onclick="closeMobile()">Results</a>
-    <a href="#thumbnails" onclick="closeMobile()">Thumbnails</a>
     <a href="#pricing" onclick="closeMobile()">Pricing</a>
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#inquiry" onclick="closeMobile()">Contact</a>
@@ -444,7 +442,7 @@
                     <div class="c-info">
                         <p class="c-tag">Le Casque et la Robe &middot; Business Podcast</p>
                         <h3 class="c-title">French Podcast Feature</h3>
-                        <p class="c-desc">Visual packaging and thumbnail design for a business podcast on public procurement strategies for construction entrepreneurs.</p>
+                        <p class="c-desc">Visual packaging and editing for a business podcast on public procurement strategies for construction entrepreneurs.</p>
                     </div>
                 </article>
                 <!-- Index 6: Superman/Commentary -->
@@ -492,7 +490,7 @@
                         <div style="margin-top:1.25rem;">
                             <div style="font-family:var(--font-mono);font-size:0.48rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:0.75rem;">Video View Performance</div>
                             <!-- Bar chart: 171K → 29K → 25K → 287K → 66K -->
-                            <div style="display:flex;align-items:flex-end;gap:6px;height:80px;">
+                            <div style="display:flex;align-items:flex-end;gap:6px;height:100px;padding-top:20px;">
                                 <div style="display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;">
                                     <div style="font-family:var(--font-mono);font-size:0.42rem;color:var(--text-3);">171K</div>
                                     <div style="width:100%;height:47px;background:var(--border-light);border-radius:2px 2px 0 0;"></div>
@@ -509,17 +507,15 @@
                                     <div style="font-family:var(--font-mono);font-size:0.38rem;color:var(--text-3);text-align:center;">prev</div>
                                 </div>
                                 <div style="display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;">
+                                    <div style="font-family:var(--font-mono);font-size:0.42rem;color:var(--green);">Edit 1</div>
                                     <div style="font-family:var(--font-mono);font-size:0.42rem;color:var(--green);">287K</div>
-                                    <div style="width:100%;height:80px;background:linear-gradient(to top,var(--accent),#80aeff);border-radius:2px 2px 0 0;position:relative;">
-                                        <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:0.38rem;color:var(--green);white-space:nowrap;">Edit 1</div>
-                                    </div>
+                                    <div style="width:100%;height:80px;background:linear-gradient(to top,var(--accent),#80aeff);border-radius:2px 2px 0 0;"></div>
                                     <div style="font-family:var(--font-mono);font-size:0.38rem;color:var(--green);text-align:center;">viral</div>
                                 </div>
                                 <div style="display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;">
+                                    <div style="font-family:var(--font-mono);font-size:0.42rem;color:var(--text-2);">Edit 2</div>
                                     <div style="font-family:var(--font-mono);font-size:0.42rem;color:var(--text-2);">66K</div>
-                                    <div style="width:100%;height:18px;background:rgba(59,111,212,0.4);border-radius:2px 2px 0 0;position:relative;">
-                                        <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:0.38rem;color:var(--text-2);white-space:nowrap;">Edit 2</div>
-                                    </div>
+                                    <div style="width:100%;height:18px;background:rgba(59,111,212,0.4);border-radius:2px 2px 0 0;"></div>
                                     <div style="font-family:var(--font-mono);font-size:0.38rem;color:var(--text-2);text-align:center;">healthy</div>
                                 </div>
                             </div>
@@ -724,58 +720,6 @@
 </section>
 
 <!-- THUMBNAILS -->
-<section id="thumbnails" class="section-wrap">
-    <div class="section-inner">
-        <div class="thumb-header">
-            <div>
-                <p class="section-label">Click-Through Rate Optimized</p>
-                <h2 class="section-title" style="margin-bottom:0">Thumbnail Design</h2>
-            </div>
-            <div class="thumb-tabs">
-                <button class="tab-btn active" onclick="filterThumbs('all',this)">All</button>
-                <button class="tab-btn" onclick="filterThumbs('podcast',this)">Podcast</button>
-                <button class="tab-btn" onclick="filterThumbs('creator',this)">Creator</button>
-                <button class="tab-btn" onclick="filterThumbs('youtube',this)">YouTube</button>
-                <button class="tab-btn" onclick="filterThumbs('commercial',this)">Commercial</button>
-            </div>
-        </div>
-        <div class="thumb-grid" id="thumbGrid">
-            <article class="thumb-card" data-cat="podcast">
-                <img src="images/thumbnail1.jpg" alt="Podcast Visual Identity">
-                <div class="thumb-overlay">
-                    <div class="thumb-cat">Podcast Series</div>
-                    <div class="thumb-name">Podcast Visual Identity System</div>
-                    <div class="thumb-desc">Client: The Bold Beginner — Cohesive thumbnail and background system for consistent visual branding across all episodes.</div>
-                </div>
-            </article>
-            <article class="thumb-card" data-cat="creator">
-                <img src="images/thumbnail2.jpg" alt="Travel Creator">
-                <div class="thumb-overlay">
-                    <div class="thumb-cat">Travel Creator</div>
-                    <div class="thumb-name">Channel Launch Thumbnail Package</div>
-                    <div class="thumb-desc">Adventure storytelling with strong visual hierarchy — designed to support a new travel creator's channel launch.</div>
-                </div>
-            </article>
-            <article class="thumb-card" data-cat="youtube">
-                <img src="images/thumbnail3.jpg" alt="Commentary Thumbnail">
-                <div class="thumb-overlay">
-                    <div class="thumb-cat">Commentary Content</div>
-                    <div class="thumb-name">CTR-Focused Thumbnail Design</div>
-                    <div class="thumb-desc">High-contrast subject isolation and bold typography to maximize click-through for commentary-style content.</div>
-                </div>
-            </article>
-            <article class="thumb-card" data-cat="commercial">
-                <img src="images/thumbnail4.jpg" alt="Coffee Product">
-                <div class="thumb-overlay">
-                    <div class="thumb-cat">Commercial Brand</div>
-                    <div class="thumb-name">Product Feature Thumbnail</div>
-                    <div class="thumb-desc">Client: Indonesian Coffee Shop — Product identity and flavor storytelling for branded video marketing.</div>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
 <!-- PRICING -->
 <section id="pricing" class="section-wrap alt">
     <div class="section-inner">
@@ -926,8 +870,17 @@
                 <div id="formStatus" class="form-status"></div>
             </form>
         </div>
-        <div style="position:sticky;top:80px;">
-            <img src="images/DSC06293.jpg" alt="Sean Matthew Tyndale" style="width:100%;border-radius:4px;display:block;filter:contrast(1.05) brightness(0.93);border:1px solid var(--border);">
+        <div style="position:static;">
+            <div style="font-family:var(--font-mono);font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-3);margin-bottom:0.875rem;">Why Work With Me</div>
+            <div style="position:relative;width:100%;padding-bottom:177.78%;border-radius:4px;overflow:hidden;border:1px solid var(--border);background:var(--surface-2);">
+                <iframe
+                    src="https://www.youtube.com/embed/kYcHoH9Yh3Y?rel=0&modestbranding=1"
+                    title="Why Work With Sean Tyndale"
+                    style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div style="margin-top:0.875rem;font-size:0.78rem;color:var(--text-3);font-weight:300;line-height:1.6;">Replace the embed above with your vertical reel once it's ready.</div>
         </div>
         </div>
     </div>
